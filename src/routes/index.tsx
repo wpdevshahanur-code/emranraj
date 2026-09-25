@@ -173,8 +173,8 @@ function Hero() {
       <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-accent/25 blur-3xl animate-blob" style={{ animationDelay: "-8s" }} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-24 lg:pt-16 lg:pb-32">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          <div>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-center">
+          <div className="lg:col-span-7">
             <motion.span
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-muted-foreground"
@@ -194,7 +194,7 @@ function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-              className="mt-6 text-lg text-muted-foreground max-w-xl"
+              className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
               I help businesses build high-performance WordPress websites and
               automate repetitive workflows with AI, n8n and modern APIs — so your
@@ -224,7 +224,9 @@ function Hero() {
             </motion.div>
           </div>
 
-          <HeroVisual />
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <HeroVisual />
+          </div>
         </div>
       </div>
     </section>
@@ -235,7 +237,7 @@ function HeroVisual() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
-      className="relative w-full max-w-lg mx-auto lg:ml-auto lg:mr-0"
+      className="relative w-full max-w-[390px] mx-auto lg:mr-0"
     >
       <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-brand opacity-30 blur-3xl" />
       <motion.div
