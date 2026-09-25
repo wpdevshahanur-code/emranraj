@@ -224,7 +224,7 @@ function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center items-end w-full">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end items-end w-full">
             <HeroVisual />
           </div>
         </div>
@@ -239,7 +239,7 @@ function HeroVisual() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="relative w-full max-w-[360px] mx-auto"
+      className="relative w-full max-w-[380px] sm:max-w-[390px] mx-auto lg:mr-0 lg:ml-auto"
     >
       {/* Dynamic Ambient Glow Behind Card */}
       <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-brand opacity-30 blur-2xl pointer-events-none" />
@@ -310,7 +310,7 @@ function HeroVisual() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0, y: [0, 6, 0] }}
         transition={{ delay: 1.0, duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -right-7 top-16 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -right-4 lg:-right-3 top-16 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
           <Bot className="h-4 w-4" />
@@ -342,7 +342,7 @@ function HeroVisual() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
         transition={{ delay: 1.4, duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -right-6 bottom-20 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -right-4 lg:-right-3 bottom-20 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
           <Shield className="h-4 w-4" />
