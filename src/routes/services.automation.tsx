@@ -9,9 +9,9 @@ import {
 export const Route = createFileRoute("/services/automation")({
   head: () => ({
     meta: [
-      { title: "Automation Solutions — n8n & AI Workflows | NovaStack" },
+      { title: "Automation Solutions — n8n & AI Workflows | Emran Raj" },
       { name: "description", content: "AI and n8n automation for lead capture, CRM sync, invoicing, appointments and more. Ship the workflow, not the manual work." },
-      { property: "og:title", content: "AI & n8n Automation Solutions | NovaStack" },
+      { property: "og:title", content: "AI & n8n Automation Solutions | Emran Raj" },
       { property: "og:description", content: "Custom automation workflows built with n8n and OpenAI." },
       { property: "og:url", content: "/services/automation" },
     ],

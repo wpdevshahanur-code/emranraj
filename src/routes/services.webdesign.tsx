@@ -21,9 +21,9 @@ const automationFlow = [
 export const Route = createFileRoute("/services/webdesign")({
   head: () => ({
     meta: [
-      { title: "Web Design & WordPress Development | NovaStack" },
+      { title: "Web Design & WordPress Development | Emran Raj" },
       { name: "description", content: "Custom WordPress, WooCommerce, Elementor, JetEngine and Crocoblock builds engineered for speed, SEO and conversion." },
-      { property: "og:title", content: "Web Design Services | NovaStack" },
+      { property: "og:title", content: "Web Design Services | Emran Raj" },
       { property: "og:description", content: "WordPress and web design services for growing businesses." },
       { property: "og:url", content: "/services/webdesign" },
     ],

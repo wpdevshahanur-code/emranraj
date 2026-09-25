@@ -6,9 +6,9 @@ import { Check, X, ArrowRight, Sparkles, Rocket, Building2 } from "lucide-react"
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Transparent WordPress & Automation Rates | NovaStack" },
+      { title: "Pricing — Transparent WordPress & Automation Rates | Emran Raj" },
       { name: "description", content: "Simple, honest pricing for WordPress development and AI automation. Starter, Professional and Enterprise plans." },
-      { property: "og:title", content: "Pricing | NovaStack" },
+      { property: "og:title", content: "Pricing | Emran Raj" },
       { property: "og:description", content: "Fixed-scope pricing for premium WordPress and automation work." },
       { property: "og:url", content: "/pricing" },
     ],

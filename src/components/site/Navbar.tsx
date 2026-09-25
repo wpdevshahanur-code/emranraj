@@ -45,7 +45,7 @@ export function Navbar() {
               <Sparkles className="h-4 w-4" />
             </span>
             <span className="font-display text-lg font-bold tracking-tight">
-              Nova<span className="text-gradient">Stack</span>
+              Emran <span className="text-gradient">Raj</span>
             </span>
           </Link>
 

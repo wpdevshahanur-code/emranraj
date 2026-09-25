@@ -7,9 +7,9 @@ import { Mail, MessageCircle, MapPin, Send, Calendar, CheckCircle2 } from "lucid
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Start Your WordPress or Automation Project | NovaStack" },
+      { title: "Contact — Start Your WordPress or Automation Project | Emran Raj" },
       { name: "description", content: "Get in touch for WordPress development, AI automation, or a discovery call. Reply within 24 hours." },
-      { property: "og:title", content: "Contact NovaStack" },
+      { property: "og:title", content: "Contact Emran Raj" },
       { property: "og:description", content: "Reach out for premium WordPress and automation work." },
       { property: "og:url", content: "/contact" },
     ],

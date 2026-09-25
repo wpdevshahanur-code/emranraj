@@ -14,13 +14,13 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NovaStack — WordPress Development & AI Automation Studio" },
+      { title: "Emran Raj — WordPress Development & AI Automation Studio" },
       {
         name: "description",
         content:
           "Freelance WordPress developer & AI automation specialist. Build faster, automate smarter, and scale with n8n, OpenAI and modern WordPress stacks.",
       },
-      { property: "og:title", content: "NovaStack — Build Faster. Automate Smarter." },
+      { property: "og:title", content: "Emran Raj — Build Faster. Automate Smarter." },
       { property: "og:description", content: "Premium WordPress development and AI automation for ambitious teams." },
       { property: "og:url", content: "/" },
     ],
@@ -61,7 +61,7 @@ const testimonials = [
   {
     name: "Sarah Whitfield",
     role: "Founder, Lumen Health",
-    quote: "Our booking system used to eat 10 hours a week. NovaStack automated the entire pipeline in two weeks — and the site loads twice as fast.",
+    quote: "Our booking system used to eat 10 hours a week. Emran automated the entire pipeline in two weeks — and the site loads twice as fast.",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "SW",
   },
@@ -75,7 +75,7 @@ const testimonials = [
   {
     name: "Priya Anand",
     role: "CEO, Copperleaf Studio",
-    quote: "Every agency promised speed. NovaStack actually delivered a 96 PageSpeed score and rebuilt our checkout in a weekend.",
+    quote: "Every agency promised speed. Emran actually delivered a 96 PageSpeed score and rebuilt our checkout in a weekend.",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "PA",
   },

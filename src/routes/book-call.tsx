@@ -7,9 +7,9 @@ import { Calendar, CheckCircle2, Clock, Sparkles, ChevronDown } from "lucide-rea
 export const Route = createFileRoute("/book-call")({
   head: () => ({
     meta: [
-      { title: "Book a Discovery Call | NovaStack" },
+      { title: "Book a Discovery Call | Emran Raj" },
       { name: "description", content: "Book a free 30-minute discovery call. No pitch deck, no pressure — just a real conversation about your project." },
-      { property: "og:title", content: "Book a Discovery Call | NovaStack" },
+      { property: "og:title", content: "Book a Discovery Call | Emran Raj" },
       { property: "og:description", content: "Schedule a 30-minute call to discuss your WordPress or automation project." },
       { property: "og:url", content: "/book-call" },
     ],

@@ -9,9 +9,9 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Freelance WordPress & AI Automation Specialist | NovaStack" },
-      { name: "description", content: "Meet the specialist behind NovaStack. Four years building WordPress sites and AI automation for clients across four continents." },
-      { property: "og:title", content: "About NovaStack" },
+      { title: "About — Freelance WordPress & AI Automation Specialist | Emran Raj" },
+      { name: "description", content: "Meet Emran Raj. Four years building WordPress sites and AI automation for clients across four continents." },
+      { property: "og:title", content: "About Emran Raj" },
       { property: "og:description", content: "Freelance WordPress developer and AI automation specialist." },
       { property: "og:url", content: "/about" },
     ],
@@ -57,13 +57,12 @@ function AboutPage() {
                   className="h-16 w-16 rounded-2xl object-cover shadow-elegant ring-2 ring-primary/40 shrink-0"
                 />
                 <div>
-                  <div className="font-display text-xl font-bold">Hi, I'm the person behind NovaStack.</div>
+                  <div className="font-display text-xl font-bold">Hi, I'm Emran Raj.</div>
                   <div className="text-sm text-muted-foreground">Freelance WordPress + AI automation specialist</div>
                 </div>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Four years ago I was building fast WordPress sites for a boutique agency. Today I run NovaStack solo — a
-                studio built for founders who want senior-level execution without the agency overhead. My focus is narrow
+                Four years ago I was building fast WordPress sites for a boutique agency. Today I run my studio solo — built for founders who want senior-level execution without the agency overhead. My focus is narrow
                 on purpose: <span className="text-foreground font-medium">premium WordPress builds</span> and{" "}
                 <span className="text-foreground font-medium">AI-powered automation</span>. That's it. When you hire me,
                 you're not getting a jack-of-all-trades — you're getting a specialist who's shipped 50+ production

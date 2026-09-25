@@ -6,9 +6,9 @@ import { Code2, Workflow, ArrowRight, Layers, ShoppingBag, Bot, Webhook, Databas
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Web Design & n8n Automation | NovaStack" },
+      { title: "Services — Web Design & n8n Automation | Emran Raj" },
       { name: "description", content: "Two focused practices: custom WordPress web design and n8n + AI automation. Pick your path." },
-      { property: "og:title", content: "Services | NovaStack" },
+      { property: "og:title", content: "Services | Emran Raj" },
       { property: "og:description", content: "Web design and n8n automation services." },
       { property: "og:url", content: "/services" },
     ],

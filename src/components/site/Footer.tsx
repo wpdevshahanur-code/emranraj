@@ -12,7 +12,7 @@ export function Footer() {
                 <Sparkles className="h-4 w-4" />
               </span>
               <span className="font-display text-lg font-bold">
-                Nova<span className="text-gradient">Stack</span>
+                Emran <span className="text-gradient">Raj</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
@@ -63,7 +63,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} NovaStack Studio. Crafted with care.
+            © {new Date().getFullYear()} Emran Raj. Crafted with care.
           </p>
           <div className="flex items-center gap-3">
             {[

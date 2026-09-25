@@ -7,9 +7,9 @@ import { ArrowRight, Search } from "lucide-react";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — WordPress, Automation & AI Insights | NovaStack" },
+      { title: "Blog — WordPress, Automation & AI Insights | Emran Raj" },
       { name: "description", content: "Deep dives on WordPress performance, n8n automation, AI workflows, technical SEO and modern web tutorials." },
-      { property: "og:title", content: "NovaStack Blog" },
+      { property: "og:title", content: "Emran Raj Blog" },
       { property: "og:description", content: "WordPress, automation, AI and SEO insights." },
       { property: "og:url", content: "/blog" },
     ],
