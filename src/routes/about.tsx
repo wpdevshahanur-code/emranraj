@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowRight, Award, Clock, HeartHandshake, ShieldCheck, Sparkles, Rocket, Briefcase, Workflow, Bot, Trophy } from "lucide-react";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -50,9 +51,11 @@ function AboutPage() {
           <Reveal>
             <div className="rounded-3xl glass p-10 lg:p-14">
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-brand text-white flex items-center justify-center shadow-elegant">
-                  <Sparkles className="h-5 w-5" />
-                </div>
+                <img
+                  src={heroPortrait}
+                  alt="Profile Portrait"
+                  className="h-16 w-16 rounded-2xl object-cover shadow-elegant ring-2 ring-primary/40 shrink-0"
+                />
                 <div>
                   <div className="font-display text-xl font-bold">Hi, I'm the person behind NovaStack.</div>
                   <div className="text-sm text-muted-foreground">Freelance WordPress + AI automation specialist</div>

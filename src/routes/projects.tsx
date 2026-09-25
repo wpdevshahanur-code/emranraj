@@ -28,18 +28,100 @@ type Project = {
   solution: string;
   result: string;
   gradient: string;
+  image: string;
 };
 
 const projects: Project[] = [
-  { title: "Lumen Health Booking Platform", category: "Healthcare", tech: ["WordPress", "JetBooking", "n8n", "Twilio"], challenge: "Manual patient booking and 40% no-show rate.", solution: "Self-service booking with SMS reminders and AI triage.", result: "72% fewer no-shows", gradient: "from-primary to-accent" },
-  { title: "Northwind Realty Listings", category: "Real Estate", tech: ["JetEngine", "Elementor", "OpenAI"], challenge: "Slow listings site with poor lead capture.", solution: "Dynamic CPT-driven listings + AI lead scoring pipeline.", result: "3.2x qualified leads", gradient: "from-secondary to-primary" },
-  { title: "Copperleaf Checkout Rebuild", category: "Ecommerce", tech: ["WooCommerce", "Stripe", "Cloudflare"], challenge: "Cart abandonment above 78%.", solution: "One-page checkout, edge caching and Apple Pay.", result: "+41% conversion", gradient: "from-accent to-secondary" },
-  { title: "Tessera Learning LMS", category: "Education", tech: ["LearnDash", "Elementor", "OpenAI"], challenge: "Tutors overwhelmed with manual grading.", solution: "AI-assisted grading with human review loop.", result: "8h saved per tutor / week", gradient: "from-primary to-secondary" },
-  { title: "Helios Agency Website", category: "Agency", tech: ["WordPress", "GSAP", "Tailwind"], challenge: "Legacy site hurting brand perception.", solution: "Bespoke design system with rich motion.", result: "2.4x avg. session time", gradient: "from-secondary to-accent" },
-  { title: "Aurora Retail Sync", category: "Automation", tech: ["n8n", "Shopify", "Airtable"], challenge: "Inventory drift across 3 sales channels.", solution: "Bi-directional sync workflow with alerting.", result: "Zero stock errors in 6 months", gradient: "from-accent to-primary" },
-  { title: "Meridian Legal Portal", category: "Business", tech: ["WordPress", "ACF", "REST API"], challenge: "Client documents scattered across email.", solution: "Client portal with document versioning.", result: "60% fewer support tickets", gradient: "from-primary to-accent" },
-  { title: "Willow Boutique Store", category: "Ecommerce", tech: ["WooCommerce", "Klaviyo", "n8n"], challenge: "No post-purchase engagement.", solution: "Automated flows for reviews, upsells and win-backs.", result: "+29% repeat revenue", gradient: "from-secondary to-primary" },
-  { title: "Foundry AI Support Bot", category: "Automation", tech: ["OpenAI", "n8n", "Fluent CRM"], challenge: "Support team drowning in repetitive tickets.", solution: "RAG-powered chatbot with CRM handoff.", result: "68% tickets self-resolved", gradient: "from-accent to-secondary" },
+  {
+    title: "Lumen Health Booking Platform",
+    category: "Healthcare",
+    tech: ["WordPress", "JetBooking", "n8n", "Twilio"],
+    challenge: "Manual patient booking and 40% no-show rate.",
+    solution: "Self-service booking with SMS reminders and AI triage.",
+    result: "72% fewer no-shows",
+    gradient: "from-primary to-accent",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Northwind Realty Listings",
+    category: "Real Estate",
+    tech: ["JetEngine", "Elementor", "OpenAI"],
+    challenge: "Slow listings site with poor lead capture.",
+    solution: "Dynamic CPT-driven listings + AI lead scoring pipeline.",
+    result: "3.2x qualified leads",
+    gradient: "from-secondary to-primary",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Copperleaf Checkout Rebuild",
+    category: "Ecommerce",
+    tech: ["WooCommerce", "Stripe", "Cloudflare"],
+    challenge: "Cart abandonment above 78%.",
+    solution: "One-page checkout, edge caching and Apple Pay.",
+    result: "+41% conversion",
+    gradient: "from-accent to-secondary",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Tessera Learning LMS",
+    category: "Education",
+    tech: ["LearnDash", "Elementor", "OpenAI"],
+    challenge: "Tutors overwhelmed with manual grading.",
+    solution: "AI-assisted grading with human review loop.",
+    result: "8h saved per tutor / week",
+    gradient: "from-primary to-secondary",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Helios Agency Website",
+    category: "Agency",
+    tech: ["WordPress", "GSAP", "Tailwind"],
+    challenge: "Legacy site hurting brand perception.",
+    solution: "Bespoke design system with rich motion.",
+    result: "2.4x avg. session time",
+    gradient: "from-secondary to-accent",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Aurora Retail Sync",
+    category: "Automation",
+    tech: ["n8n", "Shopify", "Airtable"],
+    challenge: "Inventory drift across 3 sales channels.",
+    solution: "Bi-directional sync workflow with alerting.",
+    result: "Zero stock errors in 6 months",
+    gradient: "from-accent to-primary",
+    image: "https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Meridian Legal Portal",
+    category: "Business",
+    tech: ["WordPress", "ACF", "REST API"],
+    challenge: "Client documents scattered across email.",
+    solution: "Client portal with document versioning.",
+    result: "60% fewer support tickets",
+    gradient: "from-primary to-accent",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Willow Boutique Store",
+    category: "Ecommerce",
+    tech: ["WooCommerce", "Klaviyo", "n8n"],
+    challenge: "No post-purchase engagement.",
+    solution: "Automated flows for reviews, upsells and win-backs.",
+    result: "+29% repeat revenue",
+    gradient: "from-secondary to-primary",
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Foundry AI Support Bot",
+    category: "Automation",
+    tech: ["OpenAI", "n8n", "Fluent CRM"],
+    challenge: "Support team drowning in repetitive tickets.",
+    solution: "RAG-powered chatbot with CRM handoff.",
+    result: "68% tickets self-resolved",
+    gradient: "from-accent to-secondary",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+  },
 ];
 
 function ProjectsPage() {
@@ -78,15 +160,21 @@ function ProjectsPage() {
             {visible.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.04}>
                 <article className="group h-full rounded-3xl glass overflow-hidden hover-lift">
-                  <div className={`relative aspect-[16/10] bg-gradient-to-br ${p.gradient}`}>
-                    <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.3), transparent 60%)" }} />
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                     <div className="absolute top-4 left-4">
-                      <span className="rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-bold tracking-wider uppercase">
+                      <span className="rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-bold tracking-wider uppercase backdrop-blur-md">
                         {p.category}
                       </span>
                     </div>
                     <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white">{p.title}</h3>
+                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white drop-shadow-sm">{p.title}</h3>
                     </div>
                   </div>
                   <div className="p-6 lg:p-8">

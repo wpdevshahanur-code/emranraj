@@ -58,16 +58,58 @@ const stack = [
 ];
 
 const testimonials = [
-  { name: "Sarah Whitfield", role: "Founder, Lumen Health", quote: "Our booking system used to eat 10 hours a week. NovaStack automated the entire pipeline in two weeks — and the site loads twice as fast.", avatar: "SW" },
-  { name: "Marcus Rivera", role: "COO, Northwind Realty", quote: "The JetEngine listings site is a machine. Leads flow straight into our CRM with AI-scored priority. We closed 3 extra deals in the first month.", avatar: "MR" },
-  { name: "Priya Anand", role: "CEO, Copperleaf Studio", quote: "Every agency promised speed. NovaStack actually delivered a 96 PageSpeed score and rebuilt our checkout in a weekend.", avatar: "PA" },
-  { name: "Daniel Okafor", role: "Founder, Tessera Learning", quote: "The LMS + AI grading workflow is a game changer. Students get instant feedback, tutors get their evenings back.", avatar: "DO" },
+  {
+    name: "Sarah Whitfield",
+    role: "Founder, Lumen Health",
+    quote: "Our booking system used to eat 10 hours a week. NovaStack automated the entire pipeline in two weeks — and the site loads twice as fast.",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "SW",
+  },
+  {
+    name: "Marcus Rivera",
+    role: "COO, Northwind Realty",
+    quote: "The JetEngine listings site is a machine. Leads flow straight into our CRM with AI-scored priority. We closed 3 extra deals in the first month.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "MR",
+  },
+  {
+    name: "Priya Anand",
+    role: "CEO, Copperleaf Studio",
+    quote: "Every agency promised speed. NovaStack actually delivered a 96 PageSpeed score and rebuilt our checkout in a weekend.",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "PA",
+  },
+  {
+    name: "Daniel Okafor",
+    role: "Founder, Tessera Learning",
+    quote: "The LMS + AI grading workflow is a game changer. Students get instant feedback, tutors get their evenings back.",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "DO",
+  },
 ];
 
 const projects = [
-  { title: "Lumen Health Booking Platform", cat: "Healthcare", tech: ["WordPress", "JetBooking", "n8n"], result: "72% fewer no-shows" },
-  { title: "Northwind Realty Listings", cat: "Real Estate", tech: ["JetEngine", "Elementor", "OpenAI"], result: "3.2x qualified leads" },
-  { title: "Copperleaf Checkout Rebuild", cat: "Ecommerce", tech: ["WooCommerce", "Stripe", "Cloudflare"], result: "+41% conversion" },
+  {
+    title: "Lumen Health Booking Platform",
+    cat: "Healthcare",
+    tech: ["WordPress", "JetBooking", "n8n"],
+    result: "72% fewer no-shows",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Northwind Realty Listings",
+    cat: "Real Estate",
+    tech: ["JetEngine", "Elementor", "OpenAI"],
+    result: "3.2x qualified leads",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Copperleaf Checkout Rebuild",
+    cat: "Ecommerce",
+    tech: ["WooCommerce", "Stripe", "Cloudflare"],
+    result: "+41% conversion",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 const faqs = [
@@ -84,9 +126,24 @@ const faqs = [
 ];
 
 const articles = [
-  { title: "Why WordPress + n8n Beats Custom SaaS for 90% of Businesses", tag: "Automation", date: "Jun 12, 2026" },
-  { title: "The Core Web Vitals Playbook for WooCommerce in 2026", tag: "SEO", date: "May 28, 2026" },
-  { title: "Building AI Lead Scoring with OpenAI and Fluent CRM", tag: "AI", date: "May 09, 2026" },
+  {
+    title: "Why WordPress + n8n Beats Custom SaaS for 90% of Businesses",
+    tag: "Automation",
+    date: "Jun 12, 2026",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "The Core Web Vitals Playbook for WooCommerce in 2026",
+    tag: "SEO",
+    date: "May 28, 2026",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Building AI Lead Scoring with OpenAI and Fluent CRM",
+    tag: "AI",
+    date: "May 09, 2026",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 function Home() {
@@ -368,10 +425,15 @@ function FeaturedProjects() {
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08}>
               <article className="group h-full rounded-2xl overflow-hidden card-glass hover-lift">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-brand opacity-90" />
-                  <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent 60%)" }} />
-                  <div className="absolute bottom-4 left-4 text-white/90 text-xs font-semibold tracking-wider uppercase">
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white/95 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm px-2.5 py-1 rounded-md bg-black/40">
                     {p.cat}
                   </div>
                 </div>
@@ -528,9 +590,12 @@ function Testimonials() {
                 </div>
                 <p className="text-base leading-relaxed">"{t.quote}"</p>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="h-11 w-11 rounded-full bg-gradient-brand text-white flex items-center justify-center font-bold text-sm">
-                    {t.avatar}
-                  </div>
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/30"
+                    loading="lazy"
+                  />
                   <div>
                     <div className="font-semibold text-sm">{t.name}</div>
                     <div className="text-xs text-muted-foreground">{t.role}</div>
@@ -600,8 +665,15 @@ function LatestArticles() {
           {articles.map((a, i) => (
             <Reveal key={a.title} delay={i * 0.05}>
               <Link to="/blog" className="group block h-full rounded-2xl overflow-hidden card-glass hover-lift">
-                <div className="aspect-[16/9] bg-gradient-brand relative">
-                  <span className="absolute top-4 left-4 rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-semibold">{a.tag}</span>
+                <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-semibold backdrop-blur-md">{a.tag}</span>
                 </div>
                 <div className="p-6">
                   <div className="text-xs text-muted-foreground">{a.date}</div>
