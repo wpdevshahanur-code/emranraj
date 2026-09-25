@@ -9,7 +9,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { useState } from "react";
-import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -189,7 +189,7 @@ function HeroVisual() {
 
       <div className="relative gradient-border rounded-[2rem] overflow-hidden shadow-elegant aspect-[4/5] bg-gradient-brand">
         <img
-          src={heroPortrait.url}
+          src={heroPortrait}
           alt="Freelance WordPress Developer and AI Automation Specialist"
           className="absolute inset-0 h-full w-full object-cover object-center"
           loading="eager"
