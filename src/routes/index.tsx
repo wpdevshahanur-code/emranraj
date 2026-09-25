@@ -173,7 +173,7 @@ function Hero() {
       <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-accent/25 blur-3xl animate-blob" style={{ animationDelay: "-8s" }} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-24 lg:pt-16 lg:pb-32">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-center">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12 items-end">
           <div className="lg:col-span-7">
             <motion.span
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
@@ -224,7 +224,7 @@ function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 flex justify-center items-end w-full">
             <HeroVisual />
           </div>
         </div>
@@ -239,7 +239,7 @@ function HeroVisual() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="relative w-full max-w-[370px] mx-auto lg:mr-0"
+      className="relative w-full max-w-[360px] mx-auto"
     >
       {/* Dynamic Ambient Glow Behind Card */}
       <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-brand opacity-30 blur-2xl pointer-events-none" />
