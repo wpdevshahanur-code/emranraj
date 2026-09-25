@@ -236,92 +236,120 @@ function Hero() {
 function HeroVisual() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
-      className="relative w-full max-w-[390px] mx-auto lg:mr-0"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="relative w-full max-w-[370px] mx-auto lg:mr-0"
     >
-      <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-brand opacity-30 blur-3xl" />
+      {/* Dynamic Ambient Glow Behind Card */}
+      <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-brand opacity-30 blur-2xl pointer-events-none" />
       <motion.div
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -inset-10 rounded-full bg-gradient-brand opacity-20 blur-3xl"
+        animate={{ scale: [1, 1.06, 1], rotate: [0, 2, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -inset-8 rounded-full bg-gradient-to-tr from-primary/30 via-secondary/25 to-accent/25 opacity-40 blur-3xl pointer-events-none"
       />
 
-      <div className="relative gradient-border rounded-[2rem] overflow-hidden shadow-elegant aspect-[4/5] bg-gradient-brand">
+      {/* Main Image Frame */}
+      <div className="relative rounded-[2.25rem] overflow-hidden shadow-[0_25px_60px_-15px_rgba(37,99,235,0.3)] ring-1 ring-white/30 border border-white/20 aspect-[4/5] bg-gradient-brand group">
         <img
           src={heroPortrait}
-          alt="Freelance WordPress Developer and AI Automation Specialist"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          alt="Emran Raj — WordPress Developer & AI Automation Specialist"
+          className="absolute inset-0 h-full w-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/25 via-transparent to-accent/20 mix-blend-overlay" />
-        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-        <div className="absolute left-5 bottom-5 right-5 flex items-end justify-between gap-3">
-          <div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-white/70">Available for new projects</div>
-            <div className="mt-1 font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-              WordPress Dev · AI Automation
-            </div>
-          </div>
-          <span className="flex items-center gap-1.5 rounded-full glass px-2.5 py-1 text-[10px] font-semibold text-white">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            LIVE
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/15 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/45 to-transparent pointer-events-none" />
+
+        {/* Top Floating Pill Inside Card */}
+        <div className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-[11px] font-semibold text-white/95 backdrop-blur-xl border border-white/20 shadow-lg bg-black/30">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
+          Available for new projects
+        </div>
+
+        {/* Bottom Glass Info Bar */}
+        <div className="absolute inset-x-3.5 bottom-3.5 z-10 rounded-2xl glass p-3.5 backdrop-blur-xl border border-white/20 shadow-2xl bg-black/45">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <div className="text-[10px] uppercase font-bold tracking-widest text-white/70">
+                Specialist
+              </div>
+              <div className="font-display text-base font-bold text-white leading-tight">
+                Emran Raj
+              </div>
+            </div>
+            <span className="rounded-lg bg-gradient-brand px-2.5 py-1 text-[11px] font-bold text-white shadow-sm shrink-0">
+              WordPress & AI
+            </span>
+          </div>
         </div>
       </div>
 
+      {/* Floating Badge 1: Speed (Top-Left) */}
       <motion.div
-        initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
-        className="hidden sm:flex absolute -left-6 top-16 items-center gap-2 rounded-xl glass shadow-elegant px-3 py-2"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0, y: [0, -6, 0] }}
+        transition={{ delay: 0.8, duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:flex absolute -left-7 top-10 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
           <Zap className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Speed</div>
-          <div className="text-xs font-semibold">98 PageSpeed</div>
+          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Performance</div>
+          <div className="text-xs font-bold text-foreground">98 PageSpeed</div>
         </div>
       </motion.div>
 
+      {/* Floating Badge 2: AI Actions (Top-Right) */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.05, duration: 0.6 }}
-        className="hidden sm:flex absolute -left-8 bottom-24 items-center gap-2 rounded-xl glass shadow-elegant px-3 py-2"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0, y: [0, 6, 0] }}
+        transition={{ delay: 1.0, duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:flex absolute -right-7 top-16 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white">
-          <Workflow className="h-4 w-4" />
-        </span>
-        <div>
-          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">n8n Flows</div>
-          <div className="text-xs font-semibold">128 active</div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.2, duration: 0.6 }}
-        className="hidden sm:flex absolute -right-6 top-28 items-center gap-2 rounded-xl glass shadow-elegant px-3 py-2"
-      >
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
           <Bot className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">AI Actions</div>
-          <div className="text-xs font-semibold">9.4k / 24h</div>
+          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">AI Automated</div>
+          <div className="text-xs font-bold text-foreground">9.4k / 24h</div>
         </div>
       </motion.div>
 
+      {/* Floating Badge 3: n8n Flows (Mid-Bottom Left) */}
       <motion.div
-        initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.35, duration: 0.6 }}
-        className="hidden sm:flex absolute -right-8 bottom-10 items-center gap-2 rounded-xl glass shadow-elegant px-3 py-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: [0, -5, 0] }}
+        transition={{ delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:flex absolute -left-8 bottom-24 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
+          <Workflow className="h-4 w-4" />
+        </span>
+        <div>
+          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Pipelines</div>
+          <div className="text-xs font-bold text-foreground">128 n8n Flows</div>
+        </div>
+      </motion.div>
+
+      {/* Floating Badge 4: Security / Production (Mid-Bottom Right) */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
+        transition={{ delay: 1.4, duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+        className="hidden sm:flex absolute -right-6 bottom-20 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+      >
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
           <Shield className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Secure</div>
-          <div className="text-xs font-semibold">SSL · WAF · Backups</div>
+          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Production Ready</div>
+          <div className="text-xs font-bold text-foreground">SSL · WAF · 100%</div>
         </div>
       </motion.div>
     </motion.div>
