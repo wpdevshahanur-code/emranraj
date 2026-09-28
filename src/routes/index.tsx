@@ -295,14 +295,14 @@ function HeroVisual() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0, y: [0, -6, 0] }}
         transition={{ delay: 0.8, duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -left-7 top-10 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -left-7 top-10 items-center gap-2.5 rounded-2xl bg-slate-950/80 backdrop-blur-xl px-3.5 py-2 border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] z-20"
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
+        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-md shadow-primary/25 shrink-0">
           <Zap className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Performance</div>
-          <div className="text-xs font-bold text-foreground">98 PageSpeed</div>
+          <div className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold">Performance</div>
+          <div className="text-xs font-bold text-white">98 PageSpeed</div>
         </div>
       </motion.div>
 
@@ -311,14 +311,14 @@ function HeroVisual() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0, y: [0, 6, 0] }}
         transition={{ delay: 1.0, duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -right-4 lg:-right-3 top-16 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -right-4 lg:-right-3 top-16 items-center gap-2.5 rounded-2xl bg-slate-950/80 backdrop-blur-xl px-3.5 py-2 border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] z-20"
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
+        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-md shadow-primary/25 shrink-0">
           <Bot className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">AI Automated</div>
-          <div className="text-xs font-bold text-foreground">9.4k / 24h</div>
+          <div className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold">AI Automated</div>
+          <div className="text-xs font-bold text-white">9.4k / 24h</div>
         </div>
       </motion.div>
 
@@ -327,14 +327,14 @@ function HeroVisual() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: [0, -5, 0] }}
         transition={{ delay: 1.2, duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -left-8 bottom-24 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -left-8 bottom-24 items-center gap-2.5 rounded-2xl bg-slate-950/80 backdrop-blur-xl px-3.5 py-2 border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] z-20"
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
+        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-md shadow-primary/25 shrink-0">
           <Workflow className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Pipelines</div>
-          <div className="text-xs font-bold text-foreground">128 n8n Flows</div>
+          <div className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold">Pipelines</div>
+          <div className="text-xs font-bold text-white">128 n8n Flows</div>
         </div>
       </motion.div>
 
@@ -343,14 +343,14 @@ function HeroVisual() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
         transition={{ delay: 1.4, duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute -right-4 lg:-right-3 bottom-20 items-center gap-2.5 rounded-xl glass shadow-xl px-3 py-2 border border-white/30 backdrop-blur-xl bg-white/75 dark:bg-slate-900/80 z-20"
+        className="hidden sm:flex absolute -right-4 lg:-right-3 bottom-20 items-center gap-2.5 rounded-2xl bg-slate-950/80 backdrop-blur-xl px-3.5 py-2 border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] z-20"
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-brand text-white shadow-sm shrink-0">
+        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-md shadow-primary/25 shrink-0">
           <Shield className="h-4 w-4" />
         </span>
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">Production Ready</div>
-          <div className="text-xs font-bold text-foreground">SSL · WAF · 100%</div>
+          <div className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold">Production Ready</div>
+          <div className="text-xs font-bold text-white">SSL · WAF · 100%</div>
         </div>
       </motion.div>
     </motion.div>
