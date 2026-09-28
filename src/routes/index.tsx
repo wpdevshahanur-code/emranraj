@@ -263,7 +263,7 @@ function HeroVisual() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/45 to-transparent pointer-events-none" />
 
         {/* Top Floating Pill Inside Card */}
-        <div className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full glass px-3.5 py-1.5 text-[11px] font-semibold text-white/95 backdrop-blur-xl border border-white/20 shadow-lg bg-black/30">
+        <div className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full bg-slate-950/70 backdrop-blur-xl px-3.5 py-1.5 text-[11px] font-semibold text-white/95 border border-white/15 shadow-lg shadow-black/40">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
@@ -272,17 +272,18 @@ function HeroVisual() {
         </div>
 
         {/* Bottom Glass Info Bar */}
-        <div className="absolute inset-x-3.5 bottom-3.5 z-10 rounded-2xl glass p-3.5 backdrop-blur-xl border border-white/20 shadow-2xl bg-black/45">
+        <div className="absolute inset-x-3.5 bottom-3.5 z-10 rounded-2xl bg-slate-950/75 backdrop-blur-2xl p-3.5 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.15)]">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <div className="text-[10px] uppercase font-bold tracking-widest text-white/70">
+              <div className="text-[10px] uppercase font-bold tracking-widest text-sky-400/90 flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 Specialist
               </div>
-              <div className="font-display text-base font-bold text-white leading-tight">
+              <div className="font-display text-base font-bold text-white leading-tight mt-0.5">
                 Emran Raj
               </div>
             </div>
-            <span className="rounded-lg bg-gradient-brand px-2.5 py-1 text-[11px] font-bold text-white shadow-sm shrink-0">
+            <span className="rounded-xl bg-gradient-brand px-3 py-1.5 text-[11px] font-bold text-white shadow-md shadow-primary/25 shrink-0 border border-white/15">
               WordPress & AI
             </span>
           </div>
