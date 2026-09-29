@@ -146,25 +146,28 @@ const testimonials = [
 
 const projects = [
   {
-    title: "Lumen Health Booking Platform",
-    cat: "Healthcare",
-    tech: ["WordPress", "JetBooking", "n8n"],
-    result: "72% fewer no-shows",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    title: "Canoil Canada Industrial Platform",
+    cat: "Business",
+    tech: ["WordPress", "Elementor", "B2B Catalog"],
+    result: "3.5x quote inquiries",
+    image: "/projects/canoil.png",
+    url: "https://canoilcanadaltd.com/",
   },
   {
-    title: "Northwind Realty Listings",
-    cat: "Real Estate",
-    tech: ["JetEngine", "Elementor", "OpenAI"],
-    result: "3.2x qualified leads",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    title: "Guardian Metal Resources PLC",
+    cat: "Corporate",
+    tech: ["WordPress", "Elementor Pro", "Financial APIs"],
+    result: "100% compliance",
+    image: "/projects/guardianmetal.png",
+    url: "https://guardianmetalresources.com",
   },
   {
-    title: "Copperleaf Checkout Rebuild",
+    title: "Fixion Fuel Research Store",
     cat: "Ecommerce",
-    tech: ["WooCommerce", "Stripe", "Cloudflare"],
-    result: "+41% conversion",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+    tech: ["WooCommerce", "WordPress", "Stripe"],
+    result: "+44% conversion",
+    image: "/projects/fixionfuel.png",
+    url: "https://fixionfuel.shop/",
   },
 ];
 

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -29,18 +29,75 @@ type Project = {
   result: string;
   gradient: string;
   image: string;
+  url?: string;
 };
 
 const projects: Project[] = [
   {
-    title: "Lumen Health Booking Platform",
-    category: "Healthcare",
-    tech: ["WordPress", "JetBooking", "n8n", "Twilio"],
-    challenge: "Manual patient booking and 40% no-show rate.",
-    solution: "Self-service booking with SMS reminders and AI triage.",
-    result: "72% fewer no-shows",
+    title: "Canoil Canada Industrial Platform",
+    category: "Business",
+    tech: ["WordPress", "Elementor", "Custom Theme", "B2B Catalog"],
+    challenge: "Legacy industrial website with slow navigation and fragmented product technical data sheets.",
+    solution: "Custom WordPress rebuild with dynamic lubricant & grease product catalog and B2B inquiry system.",
+    result: "3.5x B2B quote inquiries",
     gradient: "from-primary to-accent",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+    image: "/projects/canoil.png",
+    url: "https://canoilcanadaltd.com/",
+  },
+  {
+    title: "Guardian Metal Resources PLC",
+    category: "Business",
+    tech: ["WordPress", "Elementor Pro", "Financial APIs", "Tailwind"],
+    challenge: "Dual-listed (LSE/NASDAQ) mining firm requiring real-time stock ticker integration, investor portals, and regulatory compliance.",
+    solution: "Premium corporate WordPress rebuild featuring live market feeds, interactive Nevada project maps, and investor relations portal.",
+    result: "100% regulatory compliance",
+    gradient: "from-secondary to-primary",
+    image: "/projects/guardianmetal.png",
+    url: "https://guardianmetalresources.com",
+  },
+  {
+    title: "Fixion Fuel Research Store",
+    category: "Ecommerce",
+    tech: ["WooCommerce", "WordPress", "Stripe", "Elementor"],
+    challenge: "Complex lab-tested peptide catalog requiring COA (Certificate of Analysis) verification, fast checkout, and high trust.",
+    solution: "High-converting WooCommerce store with 1-click checkout, batch verification system, and mobile-first speed.",
+    result: "+44% checkout conversion",
+    gradient: "from-accent to-secondary",
+    image: "/projects/fixionfuel.png",
+    url: "https://fixionfuel.shop/",
+  },
+  {
+    title: "Warmtepomp Expert Utrecht",
+    category: "Automation",
+    tech: ["WordPress", "Elementor", "JetEngine", "n8n"],
+    challenge: "High inbound lead volume for heat pump consultations with manual eligibility checks and scheduling delays.",
+    solution: "Dynamic lead capture with custom quote calculator, JetEngine service areas, and automated n8n calendar booking.",
+    result: "65% faster lead qualification",
+    gradient: "from-primary to-secondary",
+    image: "/projects/warmtepomp.jpg",
+    url: "https://warmtepompexpert-utrecht.nl/",
+  },
+  {
+    title: "Amazon Resources Limited Portal",
+    category: "Business",
+    tech: ["WordPress", "REST API", "ACF Pro", "n8n"],
+    challenge: "Distributed project reporting and partner documentation across international resource exploration teams.",
+    solution: "Secure corporate portal with multi-language capability, stakeholder updates, and automated asset pipeline.",
+    result: "70% faster reporting cycles",
+    gradient: "from-secondary to-accent",
+    image: "/projects/amazonresources.jpg",
+    url: "https://amazonresourceslimited.com/",
+  },
+  {
+    title: "Hear Clear Mobile Clinic Booking",
+    category: "Healthcare",
+    tech: ["WordPress", "Elementor", "JetBooking", "Twilio SMS"],
+    challenge: "Mobile audiology clinic struggling with booking cancellations, phone tag, and route management across Somerset.",
+    solution: "Mobile-first patient self-booking system with automated SMS reminders and postcode radius validation.",
+    result: "72% fewer no-shows",
+    gradient: "from-accent to-primary",
+    image: "/projects/hearclear.jpg",
+    url: "https://hearclearmobile.com",
   },
   {
     title: "Northwind Realty Listings",
@@ -53,16 +110,6 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
   },
   {
-    title: "Copperleaf Checkout Rebuild",
-    category: "Ecommerce",
-    tech: ["WooCommerce", "Stripe", "Cloudflare"],
-    challenge: "Cart abandonment above 78%.",
-    solution: "One-page checkout, edge caching and Apple Pay.",
-    result: "+41% conversion",
-    gradient: "from-accent to-secondary",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
     title: "Tessera Learning LMS",
     category: "Education",
     tech: ["LearnDash", "Elementor", "OpenAI"],
@@ -73,16 +120,6 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=80",
   },
   {
-    title: "Helios Agency Website",
-    category: "Agency",
-    tech: ["WordPress", "GSAP", "Tailwind"],
-    challenge: "Legacy site hurting brand perception.",
-    solution: "Bespoke design system with rich motion.",
-    result: "2.4x avg. session time",
-    gradient: "from-secondary to-accent",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
     title: "Aurora Retail Sync",
     category: "Automation",
     tech: ["n8n", "Shopify", "Airtable"],
@@ -91,36 +128,6 @@ const projects: Project[] = [
     result: "Zero stock errors in 6 months",
     gradient: "from-accent to-primary",
     image: "https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Meridian Legal Portal",
-    category: "Business",
-    tech: ["WordPress", "ACF", "REST API"],
-    challenge: "Client documents scattered across email.",
-    solution: "Client portal with document versioning.",
-    result: "60% fewer support tickets",
-    gradient: "from-primary to-accent",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Willow Boutique Store",
-    category: "Ecommerce",
-    tech: ["WooCommerce", "Klaviyo", "n8n"],
-    challenge: "No post-purchase engagement.",
-    solution: "Automated flows for reviews, upsells and win-backs.",
-    result: "+29% repeat revenue",
-    gradient: "from-secondary to-primary",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Foundry AI Support Bot",
-    category: "Automation",
-    tech: ["OpenAI", "n8n", "Fluent CRM"],
-    challenge: "Support team drowning in repetitive tickets.",
-    solution: "RAG-powered chatbot with CRM handoff.",
-    result: "68% tickets self-resolved",
-    gradient: "from-accent to-secondary",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -159,37 +166,82 @@ function ProjectsPage() {
           <div className="grid gap-6 lg:grid-cols-2">
             {visible.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.04}>
-                <article className="group h-full rounded-3xl glass overflow-hidden hover-lift">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-bold tracking-wider uppercase backdrop-blur-md">
-                        {p.category}
-                      </span>
+                <article className="group h-full rounded-3xl glass overflow-hidden hover-lift flex flex-col justify-between">
+                  <div>
+                    <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="rounded-full bg-white/90 text-primary px-3 py-1 text-[11px] font-bold tracking-wider uppercase backdrop-blur-md">
+                          {p.category}
+                        </span>
+                      </div>
+                      {p.url && (
+                        <div className="absolute top-4 right-4 z-10">
+                          <a
+                            href={p.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-black/60 hover:bg-black/85 text-white px-3 py-1 text-[11px] font-semibold backdrop-blur-md transition-all shadow-sm"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            Live Website <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
+                      )}
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="font-display text-2xl md:text-3xl font-bold text-white drop-shadow-sm">
+                          {p.url ? (
+                            <a
+                              href={p.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline inline-flex items-center gap-2 group-hover:text-primary-foreground"
+                            >
+                              <span>{p.title}</span>
+                              <ExternalLink className="h-5 w-5 opacity-70 shrink-0" />
+                            </a>
+                          ) : (
+                            p.title
+                          )}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white drop-shadow-sm">{p.title}</h3>
+                    <div className="p-6 lg:p-8">
+                      <div className="flex flex-wrap gap-1.5 mb-5">
+                        {p.tech.map((t) => (
+                          <span key={t} className="text-[11px] rounded-md bg-muted px-2 py-0.5 text-muted-foreground">{t}</span>
+                        ))}
+                      </div>
+                      <dl className="space-y-3 text-sm">
+                        <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Challenge</dt><dd className="mt-1">{p.challenge}</dd></div>
+                        <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Solution</dt><dd className="mt-1">{p.solution}</dd></div>
+                        <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Result</dt><dd className="mt-1 font-semibold text-gradient">{p.result}</dd></div>
+                      </dl>
                     </div>
                   </div>
-                  <div className="p-6 lg:p-8">
-                    <div className="flex flex-wrap gap-1.5 mb-5">
-                      {p.tech.map((t) => (
-                        <span key={t} className="text-[11px] rounded-md bg-muted px-2 py-0.5 text-muted-foreground">{t}</span>
-                      ))}
-                    </div>
-                    <dl className="space-y-3 text-sm">
-                      <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Challenge</dt><dd className="mt-1">{p.challenge}</dd></div>
-                      <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Solution</dt><dd className="mt-1">{p.solution}</dd></div>
-                      <div><dt className="font-semibold text-xs uppercase tracking-wider text-muted-foreground">Result</dt><dd className="mt-1 font-semibold text-gradient">{p.result}</dd></div>
-                    </dl>
-                    <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                      View Case Study <ArrowRight className="h-3.5 w-3.5" />
+                  <div className="px-6 pb-6 lg:px-8 lg:pb-8 pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-border/40">
+                    {p.url ? (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline group/link"
+                      >
+                        <span>Visit Live Website</span>
+                        <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                      </a>
+                    ) : (
+                      <span />
+                    )}
+                    <Link to="/contact" className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors">
+                      Discuss Similar Project <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
                 </article>
