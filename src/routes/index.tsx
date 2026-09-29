@@ -124,8 +124,9 @@ const testimonials = [
   },
   {
     name: "Oliver Butt",
-    role: "Founder",
-    project: "Web Development",
+    role: "Owner",
+    domain: "guardianmetalresources.com",
+    url: "https://guardianmetalresources.com",
     platform: "Upwork Verified",
     quote: "Emran did a fantastic job with my WordPress project. He is professional, highly skilled, and very reliable. I highly recommend him to anyone looking for top-tier web development.",
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80",
