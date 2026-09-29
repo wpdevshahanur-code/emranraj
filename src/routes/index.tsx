@@ -134,8 +134,9 @@ const testimonials = [
   },
   {
     name: "Anika Russel",
-    role: "Owner, Hear Clear Mobile",
-    project: "Website Rebuild",
+    role: "Owner",
+    domain: "hearclearmobile.com",
+    url: "https://hearclearmobile.com",
     platform: "Upwork Verified",
     quote: "He understood the brief fully, worked hard to meet deadlines, suggested improvements to my ideas, solved unexpected issues along the way and was very friendly. Would hire again!",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
