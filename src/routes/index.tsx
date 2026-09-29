@@ -83,15 +83,19 @@ const stack = [
 
 const testimonials = [
   {
-    name: "Sarah Whitfield",
-    role: "Founder, Lumen Health",
-    quote: "Our booking system used to eat 10 hours a week. Emran automated the entire pipeline in two weeks — and the site loads twice as fast.",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
-    initials: "SW",
+    name: "Dr. Gamil Alhakimi",
+    role: "President",
+    project: "Website Design",
+    platform: "Upwork Verified",
+    quote: "Excellent freelancer to work with. Very professional, responsive, and reliable throughout the project. The quality of work was strong, communication was clear, and feedback was incorporated quickly and effectively. They were easy to collaborate with and showed good attention to detail. I would be happy to work with them again and would highly recommend them to others.",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "GA",
   },
   {
     name: "Marcus Rivera",
     role: "COO, Northwind Realty",
+    project: "Dynamic Platform",
+    platform: "Upwork Verified",
     quote: "The JetEngine listings site is a machine. Leads flow straight into our CRM with AI-scored priority. We closed 3 extra deals in the first month.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "MR",
@@ -99,6 +103,8 @@ const testimonials = [
   {
     name: "Priya Anand",
     role: "CEO, Copperleaf Studio",
+    project: "Performance Rebuild",
+    platform: "Upwork Verified",
     quote: "Every agency promised speed. Emran actually delivered a 96 PageSpeed score and rebuilt our checkout in a weekend.",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "PA",
@@ -106,6 +112,8 @@ const testimonials = [
   {
     name: "Daniel Okafor",
     role: "Founder, Tessera Learning",
+    project: "Automation & LMS",
+    platform: "Upwork Verified",
     quote: "The LMS + AI grading workflow is a game changer. Students get instant feedback, tutors get their evenings back.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "DO",
@@ -638,12 +646,20 @@ function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.05}>
               <div className="h-full card-glass rounded-2xl p-8 hover-lift">
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, k) => (
+                      <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  {t.platform && (
+                    <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      {t.platform}
+                    </span>
+                  )}
                 </div>
-                <p className="text-base leading-relaxed">"{t.quote}"</p>
+                <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
                 <div className="mt-6 flex items-center gap-3">
                   <img
                     src={t.avatar}
@@ -653,7 +669,9 @@ function Testimonials() {
                   />
                   <div>
                     <div className="font-semibold text-sm">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.role}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {t.role} {t.project ? `· ${t.project}` : ""}
+                    </div>
                   </div>
                 </div>
               </div>
