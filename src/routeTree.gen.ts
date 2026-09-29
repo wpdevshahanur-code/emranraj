@@ -18,8 +18,13 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAiAgentsRouteImport } from './routes/services.ai-agents'
 import { Route as ServicesAutomationRouteImport } from './routes/services.automation'
+import { Route as ServicesFullStackRouteImport } from './routes/services.full-stack'
+import { Route as ServicesJetengineRouteImport } from './routes/services.jetengine'
 import { Route as ServicesWebdesignRouteImport } from './routes/services.webdesign'
+import { Route as ServicesWoocommerceRouteImport } from './routes/services.woocommerce'
+import { Route as ServicesWordpressRouteImport } from './routes/services.wordpress'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -66,14 +71,39 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesAiAgentsRoute = ServicesAiAgentsRouteImport.update({
+  id: '/services/ai-agents',
+  path: '/services/ai-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesAutomationRoute = ServicesAutomationRouteImport.update({
   id: '/services/automation',
   path: '/services/automation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesFullStackRoute = ServicesFullStackRouteImport.update({
+  id: '/services/full-stack',
+  path: '/services/full-stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesJetengineRoute = ServicesJetengineRouteImport.update({
+  id: '/services/jetengine',
+  path: '/services/jetengine',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesWebdesignRoute = ServicesWebdesignRouteImport.update({
   id: '/services/webdesign',
   path: '/services/webdesign',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWoocommerceRoute = ServicesWoocommerceRouteImport.update({
+  id: '/services/woocommerce',
+  path: '/services/woocommerce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWordpressRoute = ServicesWordpressRouteImport.update({
+  id: '/services/wordpress',
+  path: '/services/wordpress',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -86,8 +116,13 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
+  '/services/full-stack': typeof ServicesFullStackRoute
+  '/services/jetengine': typeof ServicesJetengineRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services/woocommerce': typeof ServicesWoocommerceRoute
+  '/services/wordpress': typeof ServicesWordpressRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -99,8 +134,13 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
+  '/services/full-stack': typeof ServicesFullStackRoute
+  '/services/jetengine': typeof ServicesJetengineRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services/woocommerce': typeof ServicesWoocommerceRoute
+  '/services/wordpress': typeof ServicesWordpressRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -113,8 +153,13 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
+  '/services/full-stack': typeof ServicesFullStackRoute
+  '/services/jetengine': typeof ServicesJetengineRoute
   '/services/webdesign': typeof ServicesWebdesignRoute
+  '/services/woocommerce': typeof ServicesWoocommerceRoute
+  '/services/wordpress': typeof ServicesWordpressRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -128,8 +173,13 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/services/ai-agents'
     | '/services/automation'
+    | '/services/full-stack'
+    | '/services/jetengine'
     | '/services/webdesign'
+    | '/services/woocommerce'
+    | '/services/wordpress'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -141,8 +191,13 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/services/ai-agents'
     | '/services/automation'
+    | '/services/full-stack'
+    | '/services/jetengine'
     | '/services/webdesign'
+    | '/services/woocommerce'
+    | '/services/wordpress'
     | '/services'
   id:
     | '__root__'
@@ -154,8 +209,13 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/services/ai-agents'
     | '/services/automation'
+    | '/services/full-stack'
+    | '/services/jetengine'
     | '/services/webdesign'
+    | '/services/woocommerce'
+    | '/services/wordpress'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -168,8 +228,13 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ProjectsRoute: typeof ProjectsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ServicesAiAgentsRoute: typeof ServicesAiAgentsRoute
   ServicesAutomationRoute: typeof ServicesAutomationRoute
+  ServicesFullStackRoute: typeof ServicesFullStackRoute
+  ServicesJetengineRoute: typeof ServicesJetengineRoute
   ServicesWebdesignRoute: typeof ServicesWebdesignRoute
+  ServicesWoocommerceRoute: typeof ServicesWoocommerceRoute
+  ServicesWordpressRoute: typeof ServicesWordpressRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -238,6 +303,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/ai-agents': {
+      id: '/services/ai-agents'
+      path: '/services/ai-agents'
+      fullPath: '/services/ai-agents'
+      preLoaderRoute: typeof ServicesAiAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/automation': {
       id: '/services/automation'
       path: '/services/automation'
@@ -245,11 +317,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/full-stack': {
+      id: '/services/full-stack'
+      path: '/services/full-stack'
+      fullPath: '/services/full-stack'
+      preLoaderRoute: typeof ServicesFullStackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/jetengine': {
+      id: '/services/jetengine'
+      path: '/services/jetengine'
+      fullPath: '/services/jetengine'
+      preLoaderRoute: typeof ServicesJetengineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/webdesign': {
       id: '/services/webdesign'
       path: '/services/webdesign'
       fullPath: '/services/webdesign'
       preLoaderRoute: typeof ServicesWebdesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/woocommerce': {
+      id: '/services/woocommerce'
+      path: '/services/woocommerce'
+      fullPath: '/services/woocommerce'
+      preLoaderRoute: typeof ServicesWoocommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/wordpress': {
+      id: '/services/wordpress'
+      path: '/services/wordpress'
+      fullPath: '/services/wordpress'
+      preLoaderRoute: typeof ServicesWordpressRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -264,8 +364,13 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ProjectsRoute: ProjectsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ServicesAiAgentsRoute: ServicesAiAgentsRoute,
   ServicesAutomationRoute: ServicesAutomationRoute,
+  ServicesFullStackRoute: ServicesFullStackRoute,
+  ServicesJetengineRoute: ServicesJetengineRoute,
   ServicesWebdesignRoute: ServicesWebdesignRoute,
+  ServicesWoocommerceRoute: ServicesWoocommerceRoute,
+  ServicesWordpressRoute: ServicesWordpressRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport

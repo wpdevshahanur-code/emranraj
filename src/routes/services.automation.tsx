@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import {
-  Zap, Webhook, Workflow, Bot, Database, Mail, MessageSquare, ArrowRight,
+  Zap, Webhook, Workflow, Bot, Database, Mail, MessageSquare, ArrowRight, ExternalLink,
   UserPlus, MessagesSquare, CalendarCheck, FileText, Send, Phone, RefreshCw, Package, HeartHandshake,
 } from "lucide-react";
 
@@ -50,7 +50,26 @@ function AutomationPage() {
         eyebrow="Automation Solutions"
         title={<>Stop doing the work. <span className="text-gradient">Automate it.</span></>}
         description="Every repetitive task is an opportunity. I design n8n and AI-powered workflows that quietly run your business — 24/7, reliably, at a fraction of the cost of hiring."
-      />
+      >
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+          <a
+            href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-all"
+          >
+            <span>Hire on Upwork</span>
+            <ExternalLink className="h-4 w-4" />
+          </a>
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold hover:bg-muted transition-colors"
+          >
+            <span>View Automation Projects</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </PageHeader>
 
       <section className="pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -109,9 +128,24 @@ function AutomationPage() {
               <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
               <h3 className="relative font-display text-3xl md:text-4xl font-bold">Have a task you keep doing manually?</h3>
               <p className="relative mt-3 text-white/85 max-w-xl mx-auto">Let's map it in 30 minutes and quote a fixed automation sprint.</p>
-              <Link to="/book-call" className="relative mt-6 inline-flex items-center gap-2 rounded-xl bg-white text-primary px-6 py-3 text-sm font-semibold">
-                Book automation call <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-white text-primary px-7 py-3.5 text-sm font-semibold shadow-soft hover:bg-white/95 transition-all"
+                >
+                  <span>Hire on Upwork</span>
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                >
+                  <span>Discuss Automation Sprint</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>

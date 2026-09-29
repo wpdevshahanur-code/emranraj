@@ -36,31 +36,37 @@ const services = [
     icon: Code2,
     title: "Full-Stack Web Apps",
     desc: "Custom web applications and modern websites built with React, Next.js, and clean code — fast, scalable, and zero bloat.",
+    to: "/services/full-stack",
   },
   {
     icon: Layers,
     title: "WordPress & Elementor",
     desc: "Pixel-perfect, high-performance WordPress sites built with Elementor or custom blocks so your team can easily manage content.",
+    to: "/services/wordpress",
   },
   {
     icon: Boxes,
     title: "JetEngine Dynamic Sites",
     desc: "Complex directories, custom post types (CPTs), booking engines, and advanced listing platforms powered by Crocoblock.",
+    to: "/services/jetengine",
   },
   {
     icon: ShoppingBag,
     title: "WooCommerce & Stores",
     desc: "Conversion-optimized online stores with frictionless checkout, tuned payment gateways, and automated order handling.",
+    to: "/services/woocommerce",
   },
   {
     icon: Workflow,
     title: "n8n Workflow Automation",
     desc: "Self-hosted automated pipelines connecting your CRM, email, WhatsApp, and forms to eliminate repetitive busywork.",
+    to: "/services/automation",
   },
   {
     icon: Bot,
     title: "AI Workflows & Agents",
     desc: "Practical OpenAI and custom AI agents that qualify leads, draft smart replies, and handle repetitive tasks 24/7.",
+    to: "/services/ai-agents",
   },
 ];
 
@@ -486,7 +492,7 @@ function Services() {
                     </span>
                     <h3 className="mt-6 font-display text-xl font-semibold">{s.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                    <Link to="/services" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    <Link to={s.to} className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
                       Learn more <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>

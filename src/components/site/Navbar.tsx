@@ -1,10 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles, ChevronDown, Code2, Workflow, ExternalLink } from "lucide-react";
+import { Menu, X, Sparkles, ChevronDown, Code2, Workflow, ExternalLink, Layers, Boxes, ShoppingBag, Bot } from "lucide-react";
 
 const serviceItems = [
-  { to: "/services/webdesign", label: "Web Development", desc: "Full-stack apps & modern sites", icon: Code2 },
-  { to: "/services/automation", label: "n8n Automation", desc: "AI & workflow automation", icon: Workflow },
+  { to: "/services/full-stack", label: "Full-Stack Web Apps", desc: "React, Next.js & clean code", icon: Code2 },
+  { to: "/services/wordpress", label: "WordPress & Elementor", desc: "Pixel-perfect custom CMS", icon: Layers },
+  { to: "/services/jetengine", label: "JetEngine Dynamic Sites", desc: "CPTs, booking & directories", icon: Boxes },
+  { to: "/services/woocommerce", label: "WooCommerce & Stores", desc: "High-converting ecommerce", icon: ShoppingBag },
+  { to: "/services/automation", label: "n8n Automation", desc: "Self-hosted workflow pipelines", icon: Workflow },
+  { to: "/services/ai-agents", label: "AI Workflows & Agents", desc: "Autonomous LLM agents & bots", icon: Bot },
 ] as const;
 
 const links = [
@@ -62,7 +66,7 @@ export function Navbar() {
                     {l.label}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
                   </Link>
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all absolute left-0 top-full pt-2 w-72 z-50">
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all absolute left-0 top-full pt-2 w-80 z-50">
                     <div className="glass rounded-2xl p-2 shadow-elegant border border-border">
                       {serviceItems.map((s) => {
                         const Icon = s.icon;
