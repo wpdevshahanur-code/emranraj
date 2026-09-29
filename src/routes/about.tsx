@@ -4,15 +4,14 @@ import { useRef } from "react";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { ArrowRight, Award, Clock, HeartHandshake, ShieldCheck, Sparkles, Rocket, Briefcase, Workflow, Bot, Trophy } from "lucide-react";
-import heroPortrait from "@/assets/hero-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Freelance WordPress & AI Automation Specialist | Emran Raj" },
-      { name: "description", content: "Meet Emran Raj. Four years building WordPress sites and AI automation for clients across four continents." },
+      { title: "About — Full-Stack WordPress & Automation Architect | Emran Raj" },
+      { name: "description", content: "Meet Emran Raj. 8+ years building enterprise WordPress sites, Crocoblock JetEngine platforms, and AI automation for clients across four continents." },
       { property: "og:title", content: "About Emran Raj" },
-      { property: "og:description", content: "Freelance WordPress developer and AI automation specialist." },
+      { property: "og:description", content: "Full-Stack WordPress developer and AI automation architect." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -22,10 +21,10 @@ export const Route = createFileRoute("/about")({
 
 const timeline = [
   { year: "2022", title: "First WordPress agency role", d: "Cut my teeth on Elementor Pro builds and WooCommerce migrations.", icon: Briefcase, tag: "Chapter 01", metric: "12 sites shipped" },
-  { year: "2023", title: "Went independent", d: "Launched NovaStack focused on premium WordPress and Crocoblock work.", icon: Rocket, tag: "Chapter 02", metric: "First 6-figure year" },
-  { year: "2024", title: "Deep dive into automation", d: "Started shipping n8n and Make workflows alongside every build.", icon: Workflow, tag: "Chapter 03", metric: "40+ workflows live" },
+  { year: "2023", title: "Went independent", d: "Launched studio focused on premium WordPress and Crocoblock JetEngine work.", icon: Rocket, tag: "Chapter 02", metric: "First 6-figure year" },
+  { year: "2024", title: "Deep dive into automation", d: "Started shipping self-hosted n8n and webhook pipelines alongside every build.", icon: Workflow, tag: "Chapter 03", metric: "40+ workflows live" },
   { year: "2025", title: "AI-first automation", d: "Integrated OpenAI into client stacks — lead scoring, RAG bots, content ops.", icon: Bot, tag: "Chapter 04", metric: "9k+ AI actions/day" },
-  { year: "2026", title: "50+ shipped projects", d: "Now serving founders across the US, EU, UK and Australia.", icon: Trophy, tag: "Chapter 05", metric: "4 continents served" },
+  { year: "2026", title: "50+ shipped projects", d: "Now serving founders across the US, EU, UK, Canada and Australia.", icon: Trophy, tag: "Chapter 05", metric: "4 continents served" },
 ];
 
 const whyMe = [
@@ -35,7 +34,24 @@ const whyMe = [
   { icon: HeartHandshake, title: "Long-term partnership", d: "Care plans and iteration cycles for the businesses I help launch." },
 ];
 
-const stack = ["WordPress", "Elementor", "Crocoblock", "JetEngine", "WooCommerce", "PHP", "JavaScript", "CSS", "REST API", "Webhook", "n8n", "OpenAI"];
+const stack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "WordPress",
+  "Elementor Pro",
+  "Crocoblock",
+  "JetEngine",
+  "WooCommerce",
+  "PHP",
+  "Tailwind CSS",
+  "REST API",
+  "Webhooks",
+  "n8n",
+  "OpenAI",
+  "Docker",
+  "Redis",
+];
 
 function AboutPage() {
   return (
@@ -49,25 +65,102 @@ function AboutPage() {
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Reveal>
-            <div className="rounded-3xl glass p-10 lg:p-14">
-              <div className="flex items-center gap-4 mb-6">
-                <img
-                  src={heroPortrait}
-                  alt="Profile Portrait"
-                  className="h-16 w-16 rounded-2xl object-cover shadow-elegant ring-2 ring-primary/40 shrink-0"
-                />
-                <div>
-                  <div className="font-display text-xl font-bold">Hi, I'm Emran Raj.</div>
-                  <div className="text-sm text-muted-foreground">Freelance WordPress + AI automation specialist</div>
+            <div className="rounded-3xl glass p-8 sm:p-10 lg:p-14 border border-border/80 shadow-soft">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 pb-8 border-b border-border/60">
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/author-emran.png"
+                    alt="Emran Raj"
+                    className="h-20 w-20 rounded-2xl object-cover shadow-elegant ring-2 ring-primary/40 shrink-0"
+                  />
+                  <div>
+                    <div className="font-display text-2xl font-bold tracking-tight">Hi, I'm Emran Raj.</div>
+                    <div className="text-sm font-medium text-primary">Full-Stack WordPress Engineer & Automation Architect</div>
+                    <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
+                      <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                      </span>
+                      <span>Available for projects on Upwork</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-xs font-semibold text-white shadow-elegant hover:shadow-glow transition-all"
+                  >
+                    Hire on Upwork
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-xl glass px-4 py-2.5 text-xs font-semibold text-foreground hover:border-primary/40 transition-all"
+                  >
+                    Get in Touch
+                  </Link>
                 </div>
               </div>
-              <p className="text-base leading-relaxed text-muted-foreground">
-                Four years ago I was building fast WordPress sites for a boutique agency. Today I run my studio solo — built for founders who want senior-level execution without the agency overhead. My focus is narrow
-                on purpose: <span className="text-foreground font-medium">premium WordPress builds</span> and{" "}
-                <span className="text-foreground font-medium">AI-powered automation</span>. That's it. When you hire me,
-                you're not getting a jack-of-all-trades — you're getting a specialist who's shipped 50+ production
-                projects across healthcare, real estate, education, agencies and ecommerce.
-              </p>
+
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  I'm a senior Full-Stack WordPress Engineer and Automation Architect with over <span className="text-foreground font-semibold">8+ years of production experience</span> delivering custom web applications, complex relational databases, and automated back-office workflows for founders and growing businesses worldwide.
+                </p>
+                <p>
+                  Rather than running a bloated agency with junior handoffs and communication bottlenecks, I work directly with founders and product teams. My core engineering practices cover:
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-2.5 text-sm text-foreground/90 my-4">
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>Full-Stack Apps:</strong> React, Next.js, TypeScript & clean APIs</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>WordPress & Elementor:</strong> Pixel-perfect builds (95+ PageSpeed)</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>Crocoblock JetEngine:</strong> Dynamic CPTs, bookings & smart filters</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>WooCommerce:</strong> 1-Click checkout funnels & payment gateways</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>n8n Automations:</strong> Self-hosted workflow orchestration</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span><strong>AI Workflows:</strong> OpenAI agents, RAG bots & lead scoring</span>
+                  </li>
+                </ul>
+                <p>
+                  With <span className="text-foreground font-semibold">50+ successful production platforms</span> shipped across North America, Europe, Australia, and Asia — from industrial portals like Canoil Canada and mining corporations like Guardian Metal Resources PLC to high-converting research stores like Fixion Fuel — I build software that runs reliably, scales gracefully, and drives measurable revenue.
+                </p>
+              </div>
+
+              {/* Highlight Metrics */}
+              <div className="mt-8 pt-6 border-t border-border/60 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                <div className="rounded-xl glass p-3.5">
+                  <div className="font-display text-2xl font-bold text-gradient">50+</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">Projects Shipped</div>
+                </div>
+                <div className="rounded-xl glass p-3.5">
+                  <div className="font-display text-2xl font-bold text-gradient">100%</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">Job Success Score</div>
+                </div>
+                <div className="rounded-xl glass p-3.5">
+                  <div className="font-display text-2xl font-bold text-gradient">95+</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">PageSpeed Guarantee</div>
+                </div>
+                <div className="rounded-xl glass p-3.5">
+                  <div className="font-display text-2xl font-bold text-gradient">15+</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5">Countries Served</div>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
