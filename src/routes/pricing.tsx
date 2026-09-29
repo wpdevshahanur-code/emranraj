@@ -21,7 +21,7 @@ const tiers = [
   {
     name: "Starter",
     icon: Sparkles,
-    price: "$1,900",
+    price: "$300",
     tagline: "Perfect for small businesses launching their first professional site.",
     features: [
       "Up to 5 pages",
@@ -38,7 +38,7 @@ const tiers = [
   {
     name: "Professional",
     icon: Rocket,
-    price: "$4,500",
+    price: "$900",
     tagline: "For businesses ready to scale with automation baked in.",
     features: [
       "Up to 15 pages",
