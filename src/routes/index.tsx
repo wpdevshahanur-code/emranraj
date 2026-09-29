@@ -180,7 +180,7 @@ function Hero() {
               className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-muted-foreground"
             >
               <Sparkles className="h-3.5 w-3.5 text-primary" />
-              WordPress Development · AI Automation
+              Full-Stack Development · AI Automation
             </motion.span>
 
             <motion.h1
@@ -196,9 +196,9 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
-              I help businesses build high-performance WordPress websites and
-              automate repetitive workflows with AI, n8n and modern APIs — so your
-              team ships more and drags less.
+              I build fast, reliable web applications and connect systems with smart AI automations.
+              Basically, I handle the technical heavy lifting so you and your team can stop doing
+              repetitive busywork and focus on growing your business.
             </motion.p>
 
             <motion.div
@@ -253,7 +253,7 @@ function HeroVisual() {
       <div className="relative rounded-[2.25rem] overflow-hidden shadow-[0_25px_60px_-15px_rgba(37,99,235,0.3)] ring-1 ring-white/30 border border-white/20 aspect-[4/5] bg-gradient-brand group">
         <img
           src={heroPortrait}
-          alt="Emran Raj — WordPress Developer & AI Automation Specialist"
+          alt="Emran Raj — Full-Stack Developer & AI Automation Specialist"
           className="absolute inset-0 h-full w-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
           loading="eager"
         />
@@ -284,7 +284,7 @@ function HeroVisual() {
               </div>
             </div>
             <span className="rounded-xl bg-gradient-brand px-3 py-1.5 text-[11px] font-bold text-white shadow-md shadow-primary/25 shrink-0 border border-white/15">
-              WordPress & AI
+              Full-Stack & AI
             </span>
           </div>
         </div>
