@@ -687,8 +687,26 @@ function Testimonials() {
                   />
                   <div>
                     <div className="font-semibold text-sm">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {t.role} {t.project ? `· ${t.project}` : ""}
+                    <div className="text-xs text-muted-foreground flex flex-wrap items-center gap-1.5 mt-0.5">
+                      <span>{t.role}</span>
+                      {t.domain && (
+                        <>
+                          <span>·</span>
+                          {t.url ? (
+                            <a
+                              href={t.url.startsWith("http") ? t.url : `https://${t.url}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline inline-flex items-center gap-0.5 font-medium transition-colors"
+                            >
+                              {t.domain}
+                              <ExternalLink className="h-3 w-3 inline opacity-70" />
+                            </a>
+                          ) : (
+                            <span className="text-primary font-medium">{t.domain}</span>
+                          )}
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
