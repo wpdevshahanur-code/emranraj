@@ -94,8 +94,9 @@ const testimonials = [
   },
   {
     name: "Rik Bakker",
-    role: "Founder",
-    project: "WordPress & Elementor",
+    role: "Owner",
+    domain: "warmtepompexpert-utrecht.nl",
+    url: "https://warmtepompexpert-utrecht.nl/",
     platform: "Upwork Verified",
     quote: "Working with Emran was an excellent experience from start to finish. He is professional, friendly, patient, and extremely skilled in WordPress and Elementor. He understood my vision immediately and delivered high-quality results.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
