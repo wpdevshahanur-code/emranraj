@@ -32,12 +32,36 @@ export const Route = createFileRoute("/")({
 const techBadges = ["WordPress", "Elementor", "WooCommerce", "JetEngine", "n8n", "OpenAI", "Webhook", "REST API"];
 
 const services = [
-  { icon: Code2, title: "WordPress Development", desc: "Custom themes and blocks built for speed, SEO and long-term maintainability." },
-  { icon: ShoppingBag, title: "WooCommerce Stores", desc: "Conversion-obsessed storefronts with tuned checkout and payment flows." },
-  { icon: Boxes, title: "JetEngine Dynamic Sites", desc: "Complex directories, listings and CPT-driven experiences with Crocoblock." },
-  { icon: Workflow, title: "n8n Automation", desc: "Self-hosted workflows that connect your CRM, email, WhatsApp and more." },
-  { icon: Bot, title: "AI Workflows", desc: "OpenAI-powered agents that qualify leads, draft replies and score deals." },
-  { icon: Gauge, title: "Speed & SEO", desc: "Core Web Vitals in the green with technical SEO baked in from day one." },
+  {
+    icon: Code2,
+    title: "Full-Stack Web Development",
+    desc: "Fast, responsive web apps and websites built with modern stacks (React, Next.js, or WordPress) — clean code, zero bloat.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "E-Commerce & Digital Stores",
+    desc: "High-converting storefronts, customized checkouts, and seamless payment gateways designed to turn visitors into buyers.",
+  },
+  {
+    icon: Webhook,
+    title: "Custom APIs & Integrations",
+    desc: "Connecting your web apps with external services, databases, and third-party SaaS tools so data moves automatically.",
+  },
+  {
+    icon: Workflow,
+    title: "n8n Workflow Automation",
+    desc: "Self-hosted automated pipelines connecting your CRM, email, forms, and WhatsApp to eliminate repetitive busywork.",
+  },
+  {
+    icon: Bot,
+    title: "AI Workflows & Agents",
+    desc: "Practical AI assistants that qualify leads, draft contextual responses, and extract insights without messy prompt errors.",
+  },
+  {
+    icon: Gauge,
+    title: "Performance & Technical SEO",
+    desc: "Sub-second load times, green Core Web Vitals, and solid SEO foundations baked directly into every project from day one.",
+  },
 ];
 
 const process = [
@@ -52,9 +76,9 @@ const process = [
 ];
 
 const stack = [
-  "WordPress", "Elementor", "WooCommerce", "JetEngine", "Crocoblock",
-  "PHP", "JavaScript", "CSS", "Tailwind", "React",
-  "Node.js", "REST API", "Webhook", "n8n", "OpenAI", "GitHub",
+  "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS",
+  "REST APIs", "Webhooks", "PostgreSQL", "n8n", "OpenAI",
+  "WordPress", "WooCommerce", "PHP", "Git & GitHub", "Cloudflare",
 ];
 
 const testimonials = [
@@ -405,13 +429,13 @@ function Services() {
             Everything you need to <span className="text-gradient">ship and scale</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            From pixel-perfect WordPress builds to AI-driven automation, one specialist covers the whole stack.
+            From modern web applications to intelligent AI automations — everything you need to build, automate, and scale your digital presence.
           </p>
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => {
-            const isN8n = s.title === "n8n Automation";
+            const isN8n = s.title.includes("Automation");
             return (
               <Reveal key={s.title} delay={i * 0.05}>
                 <div className="group relative h-full rounded-2xl card-glass p-8 hover-lift">

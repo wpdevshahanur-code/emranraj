@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Sparkles, ChevronDown, Code2, Workflow } from "lucide-react";
 
 const serviceItems = [
-  { to: "/services/webdesign", label: "Web Design", desc: "WordPress builds & UX", icon: Code2 },
+  { to: "/services/webdesign", label: "Web Development", desc: "Full-stack apps & modern sites", icon: Code2 },
   { to: "/services/automation", label: "n8n Automation", desc: "AI & workflow automation", icon: Workflow },
 ] as const;
 

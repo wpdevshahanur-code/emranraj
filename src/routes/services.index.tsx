@@ -21,13 +21,13 @@ const pillars = [
   {
     to: "/services/webdesign",
     tag: "Practice 01",
-    title: "Web Design",
-    subtitle: "WordPress builds engineered for speed, SEO and conversion.",
+    title: "Web Development",
+    subtitle: "Full-stack web apps and modern sites engineered for speed, SEO, and conversion.",
     icon: Code2,
     bullets: [
-      { icon: Layers, label: "Elementor & JetEngine" },
-      { icon: ShoppingBag, label: "WooCommerce stores" },
-      { icon: Code2, label: "Custom themes & plugins" },
+      { icon: Layers, label: "React, Next.js & Modern CMS" },
+      { icon: ShoppingBag, label: "E-Commerce & Storefronts" },
+      { icon: Code2, label: "Custom apps & clean code" },
     ],
     gradient: "from-primary/20 via-primary/10 to-transparent",
   },
