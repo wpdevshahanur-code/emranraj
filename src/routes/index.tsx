@@ -127,6 +127,15 @@ const testimonials = [
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80",
     initials: "OB",
   },
+  {
+    name: "Anika Russel",
+    role: "Owner, Hear Clear Mobile",
+    project: "Website Rebuild",
+    platform: "Upwork Verified",
+    quote: "He understood the brief fully, worked hard to meet deadlines, suggested improvements to my ideas, solved unexpected issues along the way and was very friendly. Would hire again!",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "AR",
+  },
 ];
 
 const projects = [
@@ -651,7 +660,7 @@ function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.05}>
               <div className="h-full card-glass rounded-2xl p-8 hover-lift">
