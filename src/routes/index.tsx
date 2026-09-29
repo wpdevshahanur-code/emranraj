@@ -34,33 +34,33 @@ const techBadges = ["WordPress", "Elementor", "WooCommerce", "JetEngine", "n8n",
 const services = [
   {
     icon: Code2,
-    title: "Full-Stack Web Development",
-    desc: "Fast, responsive web apps and websites built with modern stacks (React, Next.js, or WordPress) — clean code, zero bloat.",
+    title: "Full-Stack Web Apps",
+    desc: "Custom web applications and modern websites built with React, Next.js, and clean code — fast, scalable, and zero bloat.",
+  },
+  {
+    icon: Layers,
+    title: "WordPress & Elementor",
+    desc: "Pixel-perfect, high-performance WordPress sites built with Elementor or custom blocks so your team can easily manage content.",
+  },
+  {
+    icon: Boxes,
+    title: "JetEngine Dynamic Sites",
+    desc: "Complex directories, custom post types (CPTs), booking engines, and advanced listing platforms powered by Crocoblock.",
   },
   {
     icon: ShoppingBag,
-    title: "E-Commerce & Digital Stores",
-    desc: "High-converting storefronts, customized checkouts, and seamless payment gateways designed to turn visitors into buyers.",
-  },
-  {
-    icon: Webhook,
-    title: "Custom APIs & Integrations",
-    desc: "Connecting your web apps with external services, databases, and third-party SaaS tools so data moves automatically.",
+    title: "WooCommerce & Stores",
+    desc: "Conversion-optimized online stores with frictionless checkout, tuned payment gateways, and automated order handling.",
   },
   {
     icon: Workflow,
     title: "n8n Workflow Automation",
-    desc: "Self-hosted automated pipelines connecting your CRM, email, forms, and WhatsApp to eliminate repetitive busywork.",
+    desc: "Self-hosted automated pipelines connecting your CRM, email, WhatsApp, and forms to eliminate repetitive busywork.",
   },
   {
     icon: Bot,
     title: "AI Workflows & Agents",
-    desc: "Practical AI assistants that qualify leads, draft contextual responses, and extract insights without messy prompt errors.",
-  },
-  {
-    icon: Gauge,
-    title: "Performance & Technical SEO",
-    desc: "Sub-second load times, green Core Web Vitals, and solid SEO foundations baked directly into every project from day one.",
+    desc: "Practical OpenAI and custom AI agents that qualify leads, draft smart replies, and handle repetitive tasks 24/7.",
   },
 ];
 
@@ -77,8 +77,8 @@ const process = [
 
 const stack = [
   "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS",
-  "REST APIs", "Webhooks", "PostgreSQL", "n8n", "OpenAI",
-  "WordPress", "WooCommerce", "PHP", "Git & GitHub", "Cloudflare",
+  "WordPress", "Elementor", "JetEngine", "Crocoblock", "WooCommerce",
+  "REST APIs", "Webhooks", "n8n", "OpenAI", "PostgreSQL", "PHP", "Git & GitHub",
 ];
 
 const testimonials = [
@@ -429,7 +429,7 @@ function Services() {
             Everything you need to <span className="text-gradient">ship and scale</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            From modern web applications to intelligent AI automations — everything you need to build, automate, and scale your digital presence.
+            From custom full-stack web apps and advanced WordPress/JetEngine platforms to smart AI automations — everything you need to ship and scale.
           </p>
         </Reveal>
 
