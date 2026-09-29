@@ -85,7 +85,8 @@ const testimonials = [
   {
     name: "Dr. Gamil Alhakimi",
     role: "President",
-    project: "Website Design",
+    domain: "canoilcanadaltd.com",
+    url: "https://canoilcanadaltd.com/",
     platform: "Upwork Verified",
     quote: "Excellent freelancer to work with. Very professional, responsive, and reliable throughout the project. The quality of work was strong, communication was clear, and feedback was incorporated quickly and effectively. They were easy to collaborate with and showed good attention to detail. I would be happy to work with them again and would highly recommend them to others.",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&h=200&q=80",
