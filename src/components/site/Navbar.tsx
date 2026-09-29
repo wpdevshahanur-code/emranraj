@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles, ChevronDown, Code2, Workflow } from "lucide-react";
+import { Menu, X, Sparkles, ChevronDown, Code2, Workflow, ExternalLink } from "lucide-react";
 
 const serviceItems = [
   { to: "/services/webdesign", label: "Web Development", desc: "Full-stack apps & modern sites", icon: Code2 },
@@ -101,12 +101,15 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:block">
-            <Link
-              to="/book-call"
+            <a
+              href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-shadow"
             >
-              Book Discovery Call
-            </Link>
+              Hire on Upwork
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
           </div>
 
           <button
@@ -146,13 +149,16 @@ export function Navbar() {
                   )}
                 </div>
               ))}
-              <Link
-                to="/book-call"
+              <a
+                href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="mt-2 text-center rounded-xl bg-gradient-brand px-5 py-3 text-sm font-semibold text-white"
+                className="mt-2 text-center rounded-xl bg-gradient-brand px-5 py-3 text-sm font-semibold text-white inline-flex items-center justify-center gap-2"
               >
-                Book Discovery Call
-              </Link>
+                Hire on Upwork
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
         )}

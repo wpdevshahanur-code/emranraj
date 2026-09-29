@@ -264,10 +264,15 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <Link to="/contact" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-shadow">
-                Start Your Project
+              <a
+                href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-shadow"
+              >
+                Hire on Upwork
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <Link to="/projects" className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold hover:bg-muted transition-colors">
                 View My Work
               </Link>
@@ -838,9 +843,14 @@ function CTASection() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
-                <Link to="/book-call" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-primary px-6 py-3.5 text-sm font-semibold hover:bg-white/95">
-                  <Rocket className="h-4 w-4" /> Book Discovery Call
-                </Link>
+                <a
+                  href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-primary px-6 py-3.5 text-sm font-semibold hover:bg-white/95"
+                >
+                  <Rocket className="h-4 w-4" /> Hire on Upwork
+                </a>
                 <Link to="/pricing" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold hover:bg-white/10">
                   View Pricing
                 </Link>
