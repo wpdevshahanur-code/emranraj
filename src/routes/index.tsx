@@ -114,8 +114,9 @@ const testimonials = [
   },
   {
     name: "Liang Tung",
-    role: "CEO",
-    project: "Repeat Client · Web Development",
+    role: "Project Coordinator",
+    domain: "amazonresourceslimited.com",
+    url: "https://amazonresourceslimited.com/",
     platform: "Upwork Verified",
     quote: "This is my second time working with Emran. He is consistently professional, efficient, and great at development. He understands requirements perfectly and delivers high-quality work on time. Highly recommended!",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
