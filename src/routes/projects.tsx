@@ -18,7 +18,7 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
 });
 
-const categories = ["All", "Business", "Healthcare", "Real Estate", "Education", "Agency", "Ecommerce", "Automation"] as const;
+const categories = ["All", "Business", "Ecommerce", "Healthcare", "Automation"] as const;
 
 type Project = {
   title: string;
@@ -98,36 +98,6 @@ const projects: Project[] = [
     gradient: "from-accent to-primary",
     image: "/projects/hearclear.jpg",
     url: "https://hearclearmobile.com",
-  },
-  {
-    title: "Northwind Realty Listings",
-    category: "Real Estate",
-    tech: ["JetEngine", "Elementor", "OpenAI"],
-    challenge: "Slow listings site with poor lead capture.",
-    solution: "Dynamic CPT-driven listings + AI lead scoring pipeline.",
-    result: "3.2x qualified leads",
-    gradient: "from-secondary to-primary",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Tessera Learning LMS",
-    category: "Education",
-    tech: ["LearnDash", "Elementor", "OpenAI"],
-    challenge: "Tutors overwhelmed with manual grading.",
-    solution: "AI-assisted grading with human review loop.",
-    result: "8h saved per tutor / week",
-    gradient: "from-primary to-secondary",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Aurora Retail Sync",
-    category: "Automation",
-    tech: ["n8n", "Shopify", "Airtable"],
-    challenge: "Inventory drift across 3 sales channels.",
-    solution: "Bi-directional sync workflow with alerting.",
-    result: "Zero stock errors in 6 months",
-    gradient: "from-accent to-primary",
-    image: "https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
