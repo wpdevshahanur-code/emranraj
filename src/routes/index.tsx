@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, Sparkles, Zap, Bot, Layers, Rocket, Shield, Gauge,
   Workflow, Code2, ShoppingBag, Boxes, Wand2, Star, ChevronDown,
-  CheckCircle2, Globe, Cpu, Database, Webhook, Mail, MessageSquare,
+  CheckCircle2, Globe, Cpu, Database, Webhook, Mail, MessageSquare, ExternalLink,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
@@ -695,6 +695,18 @@ function Testimonials() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-all hover-lift"
+          >
+            <span>View all reviews on Upwork</span>
+            <ExternalLink className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </div>
       </div>
     </section>
