@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Logo } from "@/components/site/Logo";
 
 export function Footer() {
   return (
@@ -7,14 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-elegant">
-                <Sparkles className="h-4 w-4" />
-              </span>
-              <span className="font-display text-lg font-bold">
-                Emran <span className="text-gradient">Raj</span>
-              </span>
-            </Link>
+            <Logo />
             <p className="text-sm text-muted-foreground max-w-sm">
               High-performance WordPress websites and AI-powered automation for
               ambitious businesses. Built to scale, engineered to convert.

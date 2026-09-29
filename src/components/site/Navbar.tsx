@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles, ChevronDown, Code2, Workflow, ExternalLink, Layers, Boxes, ShoppingBag, Bot } from "lucide-react";
+import { Menu, X, ChevronDown, Code2, Workflow, ExternalLink, Layers, Boxes, ShoppingBag, Bot } from "lucide-react";
+import { Logo } from "@/components/site/Logo";
 
 const serviceItems = [
   { to: "/services/full-stack", label: "Full-Stack Web Apps", desc: "React, Next.js & clean code", icon: Code2 },
@@ -44,14 +45,7 @@ export function Navbar() {
             scrolled ? "glass shadow-soft" : "bg-transparent"
           }`}
         >
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-elegant">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            <span className="font-display text-lg font-bold tracking-tight">
-              Emran <span className="text-gradient">Raj</span>
-            </span>
-          </Link>
+          <Logo />
 
           <div className="hidden lg:flex items-center gap-1">
             {links.map((l) =>
