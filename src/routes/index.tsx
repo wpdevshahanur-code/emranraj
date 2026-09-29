@@ -104,8 +104,9 @@ const testimonials = [
   },
   {
     name: "Daniel Solis",
-    role: "Founder",
-    project: "WordPress Website",
+    role: "Owner",
+    domain: "fixionfuel.shop",
+    url: "https://fixionfuel.shop/",
     platform: "Upwork Verified",
     quote: "Emran did a fantastic job designing our website. Very responsive and helpful. Highly recommend.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
