@@ -9,6 +9,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { useState } from "react";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -312,7 +313,7 @@ function HeroVisual() {
       {/* Main Image Frame */}
       <div className="relative rounded-[2.25rem] overflow-hidden shadow-[0_25px_60px_-15px_rgba(37,99,235,0.3)] ring-1 ring-white/30 border border-white/20 aspect-[4/5] bg-gradient-brand group">
         <img
-          src="/author-emran.png"
+          src={heroPortrait}
           alt="Emran Raj — Full-Stack Developer & AI Automation Specialist"
           className="absolute inset-0 h-full w-full object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
           loading="eager"
