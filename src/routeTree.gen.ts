@@ -17,6 +17,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesAiAgentsRouteImport } from './routes/services.ai-agents'
 import { Route as ServicesAutomationRouteImport } from './routes/services.automation'
@@ -66,6 +68,16 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -110,12 +122,13 @@ const ServicesWordpressRoute = ServicesWordpressRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/book-call': typeof BookCallRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
   '/services/full-stack': typeof ServicesFullStackRoute
@@ -123,17 +136,18 @@ export interface FileRoutesByFullPath {
   '/services/webdesign': typeof ServicesWebdesignRoute
   '/services/woocommerce': typeof ServicesWoocommerceRoute
   '/services/wordpress': typeof ServicesWordpressRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
   '/book-call': typeof BookCallRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
   '/services/full-stack': typeof ServicesFullStackRoute
@@ -141,18 +155,20 @@ export interface FileRoutesByTo {
   '/services/webdesign': typeof ServicesWebdesignRoute
   '/services/woocommerce': typeof ServicesWoocommerceRoute
   '/services/wordpress': typeof ServicesWordpressRoute
+  '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/book-call': typeof BookCallRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/automation': typeof ServicesAutomationRoute
   '/services/full-stack': typeof ServicesFullStackRoute
@@ -160,6 +176,7 @@ export interface FileRoutesById {
   '/services/webdesign': typeof ServicesWebdesignRoute
   '/services/woocommerce': typeof ServicesWoocommerceRoute
   '/services/wordpress': typeof ServicesWordpressRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -173,6 +190,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/blog/$slug'
     | '/services/ai-agents'
     | '/services/automation'
     | '/services/full-stack'
@@ -180,17 +198,18 @@ export interface FileRouteTypes {
     | '/services/webdesign'
     | '/services/woocommerce'
     | '/services/wordpress'
+    | '/blog/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/blog'
     | '/book-call'
     | '/contact'
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/blog/$slug'
     | '/services/ai-agents'
     | '/services/automation'
     | '/services/full-stack'
@@ -198,6 +217,7 @@ export interface FileRouteTypes {
     | '/services/webdesign'
     | '/services/woocommerce'
     | '/services/wordpress'
+    | '/blog'
     | '/services'
   id:
     | '__root__'
@@ -209,6 +229,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/projects'
     | '/sitemap.xml'
+    | '/blog/$slug'
     | '/services/ai-agents'
     | '/services/automation'
     | '/services/full-stack'
@@ -216,13 +237,14 @@ export interface FileRouteTypes {
     | '/services/webdesign'
     | '/services/woocommerce'
     | '/services/wordpress'
+    | '/blog/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   BookCallRoute: typeof BookCallRoute
   ContactRoute: typeof ContactRoute
   PricingRoute: typeof PricingRoute
@@ -296,6 +318,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -355,10 +391,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   BookCallRoute: BookCallRoute,
   ContactRoute: ContactRoute,
   PricingRoute: PricingRoute,

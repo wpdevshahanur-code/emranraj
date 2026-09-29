@@ -192,18 +192,21 @@ const faqs = [
 
 const articles = [
   {
+    slug: "why-wordpress-n8n-beats-custom-saas",
     title: "Why WordPress + n8n Beats Custom SaaS for 90% of Businesses",
     tag: "Automation",
     date: "Jun 12, 2026",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
   {
+    slug: "core-web-vitals-playbook-woocommerce-2026",
     title: "The Core Web Vitals Playbook for WooCommerce in 2026",
     tag: "SEO",
     date: "May 28, 2026",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
   },
   {
+    slug: "ai-lead-scoring-openai-fluentcrm",
     title: "Building AI Lead Scoring with OpenAI and Fluent CRM",
     tag: "AI",
     date: "May 09, 2026",
@@ -805,7 +808,7 @@ function LatestArticles() {
         <div className="grid gap-6 lg:grid-cols-3">
           {articles.map((a, i) => (
             <Reveal key={a.title} delay={i * 0.05}>
-              <Link to="/blog" className="group block h-full rounded-2xl overflow-hidden card-glass hover-lift">
+              <Link to={`/blog/${a.slug}`} className="group block h-full rounded-2xl overflow-hidden card-glass hover-lift">
                 <div className="relative aspect-[16/9] overflow-hidden bg-muted">
                   <img
                     src={a.image}
