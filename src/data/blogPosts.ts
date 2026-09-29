@@ -46,7 +46,7 @@ export interface BlogPost {
 const defaultAuthor: BlogAuthor = {
   name: "Emran Raj",
   role: "Lead WordPress & Automation Architect",
-  avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
+  avatar: "/author-emran.png",
   upworkUrl: "https://www.upwork.com/freelancers/~015c9f89118b7be509",
 };
 

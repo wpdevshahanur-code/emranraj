@@ -13,11 +13,11 @@ const serviceItems = [
 
 const links = [
   { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
   { to: "/services", label: "Services", hasDropdown: true },
   { to: "/projects", label: "Projects" },
-  { to: "/pricing", label: "Pricing" },
   { to: "/blog", label: "Blog" },
-  { to: "/about", label: "About" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
