@@ -107,7 +107,7 @@ function AboutPage() {
               ))}
             </div>
             <div className="mt-12">
-              <Link to="/book-call" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant">
                 Let's talk about your project <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

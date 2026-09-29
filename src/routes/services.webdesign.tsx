@@ -134,8 +134,8 @@ function WebDesignPage() {
                 Tell me what you're trying to build. I'll recommend the smallest engagement that gets you there fastest.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <Link to="/book-call" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant hover:shadow-glow">
-                  Book a discovery call <ArrowRight className="h-4 w-4" />
+                <Link to="/contact" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant hover:shadow-glow">
+                  Get in touch <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link to="/pricing" className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-semibold hover:bg-muted">
                   See pricing

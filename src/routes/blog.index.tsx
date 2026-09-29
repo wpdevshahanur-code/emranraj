@@ -365,10 +365,10 @@ function BlogIndexPage() {
                     Hire on Upwork <ExternalLink className="h-4 w-4" />
                   </a>
                   <Link
-                    to="/book-call"
+                    to="/contact"
                     className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl glass px-6 py-3 text-sm font-semibold text-foreground hover:border-primary/40 transition-all"
                   >
-                    Schedule a Discovery Call <ArrowRight className="h-4 w-4" />
+                    Send a Message / Inquire <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>

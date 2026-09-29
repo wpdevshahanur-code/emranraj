@@ -427,10 +427,10 @@ function SingleBlogPostPage() {
                       Hire on Upwork <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                     <Link
-                      to="/book-call"
+                      to="/contact"
                       className="inline-flex items-center gap-2 rounded-xl glass px-4 py-2 text-xs font-semibold text-foreground hover:border-primary/40 transition-all"
                     >
-                      Book Discovery Call <ArrowRight className="h-3.5 w-3.5" />
+                      Get in Touch <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
                 </div>

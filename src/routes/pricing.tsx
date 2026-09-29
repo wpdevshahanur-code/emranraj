@@ -135,7 +135,7 @@ function PricingPage() {
                   </div>
                   <div className="mt-8 pt-2">
                     <Link
-                      to="/book-call"
+                      to="/contact"
                       className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all ${
                         t.popular ? "bg-white text-primary hover:bg-white/90 shadow-elegant" : "bg-gradient-brand text-white shadow-elegant hover:shadow-glow"
                       }`}
