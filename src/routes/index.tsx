@@ -110,13 +110,13 @@ const testimonials = [
     initials: "DS",
   },
   {
-    name: "Daniel Okafor",
-    role: "Founder, Tessera Learning",
-    project: "Automation & LMS",
+    name: "Liang Tung",
+    role: "CEO",
+    project: "Repeat Client · Web Development",
     platform: "Upwork Verified",
-    quote: "The LMS + AI grading workflow is a game changer. Students get instant feedback, tutors get their evenings back.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=80",
-    initials: "DO",
+    quote: "This is my second time working with Emran. He is consistently professional, efficient, and great at development. He understands requirements perfectly and delivers high-quality work on time. Highly recommended!",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
+    initials: "LT",
   },
 ];
 
