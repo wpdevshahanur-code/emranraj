@@ -92,13 +92,13 @@ const testimonials = [
     initials: "GA",
   },
   {
-    name: "Marcus Rivera",
-    role: "COO, Northwind Realty",
-    project: "Dynamic Platform",
+    name: "Rik Bakker",
+    role: "Founder",
+    project: "WordPress & Elementor",
     platform: "Upwork Verified",
-    quote: "The JetEngine listings site is a machine. Leads flow straight into our CRM with AI-scored priority. We closed 3 extra deals in the first month.",
+    quote: "Working with Emran was an excellent experience from start to finish. He is professional, friendly, patient, and extremely skilled in WordPress and Elementor. He understood my vision immediately and delivered high-quality results.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
-    initials: "MR",
+    initials: "RB",
   },
   {
     name: "Priya Anand",
