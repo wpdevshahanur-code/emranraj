@@ -255,48 +255,89 @@ function ModernTimeline() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.6, delay: 0.05 }}
-                  className={`relative grid md:grid-cols-2 gap-6 md:gap-0 items-center ${left ? "" : "md:[&>*:first-child]:order-2"}`}
+                  className="relative"
                 >
-                  {/* Card */}
-                  <div className={`pl-20 md:pl-0 ${left ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"}`}>
-                    <div className="group relative inline-block w-full">
-                      <div className="absolute -inset-0.5 rounded-2xl bg-gradient-brand opacity-0 group-hover:opacity-40 blur-lg transition-opacity" />
-                      <div className="relative rounded-2xl glass p-6 md:p-7 hover-lift">
-                        <div className={`flex items-center gap-2 mb-3 ${left ? "md:justify-end" : "md:justify-start"}`}>
-                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{t.tag}</span>
-                          <span className="h-1 w-1 rounded-full bg-muted-foreground/50" />
-                          <span className="text-[10px] font-semibold text-primary">{t.metric}</span>
-                        </div>
-                        <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">{t.title}</h3>
-                        <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{t.d}</p>
-                      </div>
-                    </div>
+                  {/* Center Node Badge on the rail */}
+                  <div className="absolute left-8 md:left-1/2 -translate-x-1/2 top-6 md:top-1/2 md:-translate-y-1/2 z-20">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true, margin: "-80px" }}
+                      transition={{ duration: 0.5, delay: 0.15, type: "spring", stiffness: 200 }}
+                      className="relative"
+                    >
+                      <span className="absolute inset-0 rounded-full bg-primary/40 blur-md animate-pulse" />
+                      <span className="relative flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-elegant ring-4 ring-background">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                    </motion.div>
                   </div>
 
-                  {/* Node with year */}
-                  <div className={`absolute md:relative left-0 md:left-auto top-0 md:top-auto flex ${left ? "md:justify-start md:pl-16" : "md:justify-end md:pr-16"} items-center`}>
-                    <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true, margin: "-80px" }}
-                        transition={{ duration: 0.5, delay: 0.15, type: "spring", stiffness: 200 }}
-                        className="relative"
-                      >
-                        <span className="absolute inset-0 rounded-full bg-primary/40 blur-md animate-pulse" />
-                        <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-elegant ring-4 ring-background">
-                          <Icon className="h-5 w-5" />
-                        </span>
-                      </motion.div>
-                    </div>
-                    <div className={`hidden md:block ${left ? "pl-24" : "pr-24"}`}>
-                      <div className="font-display text-5xl lg:text-6xl font-black text-gradient tabular-nums leading-none">
-                        {t.year}
+                  {/* Two Column Grid */}
+                  <div className="grid md:grid-cols-2 items-center gap-0">
+                    {/* Left Column */}
+                    {left ? (
+                      /* Left Column: Card */
+                      <div className="pl-20 md:pl-0 md:pr-12 lg:pr-16 text-left md:text-right">
+                        <div className="group relative inline-block w-full">
+                          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-brand opacity-0 group-hover:opacity-40 blur-lg transition-opacity" />
+                          <div className="relative rounded-2xl glass p-6 md:p-7 hover-lift">
+                            <div className="flex items-center gap-2 mb-3 flex-wrap md:justify-end">
+                              <span className="md:hidden font-display text-xs font-bold text-gradient px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20">
+                                {t.year}
+                              </span>
+                              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{t.tag}</span>
+                              <span className="h-1 w-1 rounded-full bg-muted-foreground/50" />
+                              <span className="text-[10px] font-semibold text-primary">{t.metric}</span>
+                            </div>
+                            <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">{t.title}</h3>
+                            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{t.d}</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="md:hidden absolute left-20 top-2 font-display text-2xl font-black text-gradient tabular-nums">
-                      {t.year}
-                    </div>
+                    ) : (
+                      /* Left Column: Year (Desktop only) */
+                      <div className="hidden md:flex flex-col items-end pr-12 lg:pr-16 text-right select-none">
+                        <div className="font-display text-5xl lg:text-6xl font-black text-gradient tabular-nums leading-none tracking-tight">
+                          {t.year}
+                        </div>
+                        <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {t.tag} • {t.metric}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Right Column */}
+                    {left ? (
+                      /* Right Column: Year (Desktop only) */
+                      <div className="hidden md:flex flex-col items-start pl-12 lg:pl-16 text-left select-none">
+                        <div className="font-display text-5xl lg:text-6xl font-black text-gradient tabular-nums leading-none tracking-tight">
+                          {t.year}
+                        </div>
+                        <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          {t.tag} • {t.metric}
+                        </div>
+                      </div>
+                    ) : (
+                      /* Right Column: Card */
+                      <div className="pl-20 md:pl-12 lg:pl-16 text-left">
+                        <div className="group relative inline-block w-full">
+                          <div className="absolute -inset-0.5 rounded-2xl bg-gradient-brand opacity-0 group-hover:opacity-40 blur-lg transition-opacity" />
+                          <div className="relative rounded-2xl glass p-6 md:p-7 hover-lift">
+                            <div className="flex items-center gap-2 mb-3 flex-wrap md:justify-start">
+                              <span className="md:hidden font-display text-xs font-bold text-gradient px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20">
+                                {t.year}
+                              </span>
+                              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{t.tag}</span>
+                              <span className="h-1 w-1 rounded-full bg-muted-foreground/50" />
+                              <span className="text-[10px] font-semibold text-primary">{t.metric}</span>
+                            </div>
+                            <h3 className="font-display text-xl md:text-2xl font-bold leading-tight">{t.title}</h3>
+                            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{t.d}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
