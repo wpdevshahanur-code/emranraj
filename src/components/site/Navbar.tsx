@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Code2, Workflow, ExternalLink, Layers, Boxes, ShoppingBag, Bot } from "lucide-react";
+import { Menu, X, ChevronDown, Code2, Workflow, ExternalLink, Layers, Boxes, ShoppingBag, Bot, ArrowRight, Sparkles } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 
 const serviceItems = [
@@ -60,26 +60,45 @@ export function Navbar() {
                     {l.label}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
                   </Link>
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all absolute left-0 top-full pt-2 w-80 z-50">
-                    <div className="glass rounded-2xl p-2 shadow-elegant border border-border">
-                      {serviceItems.map((s) => {
-                        const Icon = s.icon;
-                        return (
-                          <Link
-                            key={s.to}
-                            to={s.to}
-                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-muted transition-colors"
-                          >
-                            <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-brand text-white shrink-0">
-                              <Icon className="h-4 w-4" />
-                            </span>
-                            <span className="flex flex-col">
-                              <span className="text-sm font-semibold text-foreground">{s.label}</span>
-                              <span className="text-xs text-muted-foreground">{s.desc}</span>
-                            </span>
-                          </Link>
-                        );
-                      })}
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute -left-20 sm:-left-28 top-full pt-3 w-[560px] z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="bg-popover dark:bg-slate-900 rounded-2xl p-3 shadow-2xl border border-border ring-1 ring-black/5 dark:ring-white/10">
+                      <div className="grid grid-cols-2 gap-1.5 p-1">
+                        {serviceItems.map((s) => {
+                          const Icon = s.icon;
+                          return (
+                            <Link
+                              key={s.to}
+                              to={s.to}
+                              className="group/item flex items-start gap-3 p-2.5 rounded-xl hover:bg-muted/80 transition-colors"
+                            >
+                              <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover/item:bg-gradient-brand group-hover/item:text-white transition-all shadow-sm shrink-0">
+                                <Icon className="h-4 w-4" />
+                              </span>
+                              <span className="flex flex-col">
+                                <span className="text-sm font-semibold text-foreground group-hover/item:text-primary transition-colors leading-tight">
+                                  {s.label}
+                                </span>
+                                <span className="text-xs text-muted-foreground mt-0.5 leading-snug">
+                                  {s.desc}
+                                </span>
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      <div className="mt-2 pt-2 border-t border-border/60 px-3 py-1.5 flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground font-medium flex items-center gap-1.5">
+                          <Sparkles className="h-3.5 w-3.5 text-primary" />
+                          Custom architecture for founders
+                        </span>
+                        <Link
+                          to="/services"
+                          className="font-semibold text-primary hover:text-primary/80 inline-flex items-center gap-1 transition-colors"
+                        >
+                          View all services <ArrowRight className="h-3 w-3" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -120,7 +139,7 @@ export function Navbar() {
         </nav>
 
         {open && (
-          <div className="lg:hidden mt-2 glass rounded-2xl p-4 shadow-soft animate-fade-up">
+          <div className="lg:hidden mt-2 bg-popover dark:bg-slate-900 rounded-2xl p-4 shadow-2xl border border-border/80 ring-1 ring-black/5 dark:ring-white/10 animate-fade-up">
             <div className="flex flex-col gap-1">
               {links.map((l) => (
                 <div key={l.to} className="flex flex-col">
