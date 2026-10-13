@@ -428,17 +428,7 @@ function TrustBar() {
   ];
   return (
     <section className="border-y border-border/60 bg-surface/40">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8">
-          Trusted by businesses worldwide
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center opacity-70 mb-14">
-          {["LUMEN", "NORTHWIND", "COPPERLEAF", "TESSERA", "HELIOS", "AURORA"].map((l) => (
-            <div key={l} className="text-center font-display text-lg font-bold tracking-widest text-muted-foreground">
-              {l}
-            </div>
-          ))}
-        </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <Reveal key={i} delay={i * 0.05}>
