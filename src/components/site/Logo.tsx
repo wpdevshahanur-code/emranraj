@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-export function LogoIcon({ className = "h-9 w-9" }: { className?: string }) {
+export function LogoIcon({ className = "h-11 w-11" }: { className?: string }) {
   return (
     <div className={`relative ${className} shrink-0 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1`}>
       {/* Ambient Brand Glow on hover */}
@@ -107,14 +107,14 @@ export function Logo({
   className?: string;
 }) {
   return (
-    <Link to="/" className={`flex items-center gap-2.5 group ${className}`}>
-      <LogoIcon className="h-9 w-9" />
+    <Link to="/" className={`flex items-center gap-3 group ${className}`}>
+      <LogoIcon className="h-10.5 w-10.5 sm:h-11 sm:w-11" />
       <div className="flex flex-col -space-y-0.5">
-        <span className="font-display text-lg font-extrabold tracking-tight text-foreground transition-colors group-hover:text-foreground">
+        <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-foreground transition-colors group-hover:text-foreground">
           Emran <span className="text-gradient">Raj</span>
         </span>
         {showSubtitle ? (
-          <span className="text-[9px] font-mono font-medium tracking-widest text-muted-foreground uppercase opacity-80 group-hover:opacity-100 transition-opacity">
+          <span className="text-[10px] font-mono font-medium tracking-widest text-muted-foreground uppercase opacity-80 group-hover:opacity-100 transition-opacity">
             Web & Automation
           </span>
         ) : null}

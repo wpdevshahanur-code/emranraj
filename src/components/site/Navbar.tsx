@@ -41,8 +41,8 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <nav
-          className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all ${
-            scrolled ? "glass shadow-soft" : "bg-transparent"
+          className={`flex items-center justify-between rounded-2xl transition-all duration-200 ${
+            scrolled ? "glass shadow-soft px-4 sm:px-6 py-2.5" : "bg-transparent px-0 py-1"
           }`}
         >
           <Logo />
