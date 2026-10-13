@@ -646,23 +646,25 @@ function Testimonials() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.05}>
-              <div className="h-full card-glass rounded-2xl p-8 hover-lift">
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, k) => (
-                      <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    ))}
+            <Reveal key={t.name} delay={i * 0.05} className="h-full">
+              <div className="h-full card-glass rounded-2xl p-8 hover-lift flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, k) => (
+                        <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    {t.platform && (
+                      <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        {t.platform}
+                      </span>
+                    )}
                   </div>
-                  {t.platform && (
-                    <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      {t.platform}
-                    </span>
-                  )}
+                  <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
                 </div>
-                <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
-                <div className="mt-6 flex items-center gap-3">
+                <div className="mt-8 flex items-center gap-3">
                   <img
                     src={t.avatar}
                     alt={t.name}
