@@ -464,20 +464,23 @@ function Services() {
           {services.map((s, i) => {
             const isN8n = s.title.includes("Automation");
             return (
-              <Reveal key={s.title} delay={i * 0.05}>
-                <div className="group relative h-full rounded-2xl card-glass p-8 hover-lift">
+              <Reveal key={s.title} delay={i * 0.05} className="h-full">
+                <Link
+                  to={s.to}
+                  className="group relative block h-full rounded-2xl card-glass p-8 hover-lift cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
                   <div className={`absolute inset-0 rounded-2xl bg-gradient-brand transition-opacity ${isN8n ? "opacity-10" : "opacity-0 group-hover:opacity-10"}`} />
                   <div className="relative">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-elegant">
                       <s.icon className="h-5 w-5" />
                     </span>
-                    <h3 className="mt-6 font-display text-xl font-semibold">{s.title}</h3>
+                    <h3 className="mt-6 font-display text-xl font-semibold group-hover:text-primary transition-colors">{s.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                    <Link to={s.to} className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                    <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
                       Learn more <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
+                    </span>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             );
           })}
@@ -505,8 +508,13 @@ function FeaturedProjects() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {projects.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.08}>
-              <article className="group h-full rounded-2xl overflow-hidden card-glass hover-lift">
+            <Reveal key={p.title} delay={i * 0.08} className="h-full">
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full rounded-2xl overflow-hidden card-glass hover-lift cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   <img
                     src={p.image}
@@ -518,9 +526,13 @@ function FeaturedProjects() {
                   <div className="absolute bottom-4 left-4 text-white/95 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm px-2.5 py-1 rounded-md bg-black/40">
                     {p.cat}
                   </div>
+                  <div className="absolute top-4 right-4 text-white/95 text-[11px] font-semibold backdrop-blur-sm px-2.5 py-1 rounded-full bg-black/50 border border-white/10 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Visit Live ↗
+                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display text-lg font-semibold">{p.title}</h3>
+                  <h3 className="font-display text-lg font-semibold group-hover:text-primary transition-colors">{p.title}</h3>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {p.tech.map((t) => (
                       <span key={t} className="text-[11px] rounded-md bg-muted px-2 py-0.5 text-muted-foreground">{t}</span>
@@ -528,12 +540,12 @@ function FeaturedProjects() {
                   </div>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="text-sm text-gradient font-semibold">{p.result}</span>
-                    <Link to="/projects" className="text-sm font-semibold text-primary inline-flex items-center gap-1">
-                      Case study <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
+                    <span className="text-sm font-semibold text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Live site <ExternalLink className="h-3.5 w-3.5" />
+                    </span>
                   </div>
                 </div>
-              </article>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -635,60 +647,94 @@ function Testimonials() {
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.05} className="h-full">
-              <div className="h-full card-glass rounded-2xl p-8 hover-lift flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: 5 }).map((_, k) => (
-                        <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                      ))}
+          {testimonials.map((t, i) => {
+            const clientUrl = t.url ? (t.url.startsWith("http") ? t.url : `https://${t.url}`) : null;
+            return (
+              <Reveal key={t.name} delay={i * 0.05} className="h-full">
+                {clientUrl ? (
+                  <a
+                    href={clientUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group h-full card-glass rounded-2xl p-8 hover-lift flex flex-col justify-between cursor-pointer block transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-4">
+                        <div className="flex gap-0.5">
+                          {Array.from({ length: 5 }).map((_, k) => (
+                            <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+                        {t.platform && (
+                          <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                            {t.platform}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
                     </div>
-                    {t.platform && (
-                      <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                        {t.platform}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
-                </div>
-                <div className="mt-8 flex items-center gap-3">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/30"
-                    loading="lazy"
-                  />
-                  <div>
-                    <div className="font-semibold text-sm">{t.name}</div>
-                    <div className="text-xs text-muted-foreground flex flex-wrap items-center gap-1.5 mt-0.5">
-                      <span>{t.role}</span>
-                      {t.domain && (
-                        <>
-                          <span>·</span>
-                          {t.url ? (
-                            <a
-                              href={t.url.startsWith("http") ? t.url : `https://${t.url}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary hover:underline inline-flex items-center gap-0.5 font-medium transition-colors"
-                            >
-                              {t.domain}
-                              <ExternalLink className="h-3 w-3 inline opacity-70" />
-                            </a>
-                          ) : (
-                            <span className="text-primary font-medium">{t.domain}</span>
+                    <div className="mt-8 flex items-center gap-3">
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/30"
+                        loading="lazy"
+                      />
+                      <div>
+                        <div className="font-semibold text-sm group-hover:text-primary transition-colors">{t.name}</div>
+                        <div className="text-xs text-muted-foreground flex flex-wrap items-center gap-1.5 mt-0.5">
+                          <span>{t.role}</span>
+                          {t.domain && (
+                            <>
+                              <span>·</span>
+                              <span className="text-primary group-hover:underline inline-flex items-center gap-0.5 font-medium transition-colors">
+                                {t.domain}
+                                <ExternalLink className="h-3 w-3 inline opacity-70" />
+                              </span>
+                            </>
                           )}
-                        </>
-                      )}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="h-full card-glass rounded-2xl p-8 hover-lift flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-4">
+                        <div className="flex gap-0.5">
+                          {Array.from({ length: 5 }).map((_, k) => (
+                            <Star key={k} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                          ))}
+                        </div>
+                        {t.platform && (
+                          <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                            {t.platform}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-base leading-relaxed text-foreground/90">"{t.quote}"</p>
+                    </div>
+                    <div className="mt-8 flex items-center gap-3">
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="h-11 w-11 rounded-full object-cover ring-2 ring-primary/30"
+                        loading="lazy"
+                      />
+                      <div>
+                        <div className="font-semibold text-sm">{t.name}</div>
+                        <div className="text-xs text-muted-foreground flex flex-wrap items-center gap-1.5 mt-0.5">
+                          <span>{t.role}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+                )}
+              </Reveal>
+            );
+          })}
         </div>
 
         <div className="mt-12 text-center">
