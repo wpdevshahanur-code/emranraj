@@ -270,8 +270,21 @@ function Hero() {
                 Hire on Upwork
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link to="/projects" className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3.5 text-sm font-semibold hover:bg-muted transition-colors">
-                View My Work
+              <Link
+                to="/projects"
+                className="group relative inline-flex items-center gap-2 rounded-xl glass border-0 px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:scale-[1.02] shadow-soft hover:shadow-glow focus:outline-none"
+              >
+                {/* Outer soft ambient glow */}
+                <span className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-brand opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-60" />
+
+                {/* Exact-fit masked rotating gradient border */}
+                <span className="border-mask-track">
+                  <span className="absolute inset-[-250%] animate-border-spin bg-[conic-gradient(from_0deg_at_50%_50%,#38bdf8_0%,#ffffff_25%,#c084fc_50%,#38bdf8_75%,#ffffff_100%)]" />
+                </span>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  <span>View My Work</span>
+                </span>
               </Link>
             </motion.div>
 
