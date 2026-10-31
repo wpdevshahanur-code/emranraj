@@ -77,8 +77,8 @@ function ContactPage() {
 
           <Reveal delay={0.1} className="lg:col-span-2 space-y-5">
             <ContactCard icon={Mail} title="Business email" value="itsemranraj@gmail.com" href="mailto:itsemranraj@gmail.com" />
-            <ContactCard icon={MessageCircle} title="WhatsApp" value="+1 (555) 019-4231" href="https://wa.me/15550194231" />
-            <ContactCard icon={MapPin} title="Location" value="Remote · Lisbon, Portugal" />
+            <ContactCard icon={MessageCircle} title="WhatsApp" value="+880 1610-857553" href="https://wa.me/8801610857553" />
+            <ContactCard icon={MapPin} title="Location" value="Remote · UK, USA & Canada Based" />
             <ContactCard icon={Calendar} title="Prefer to talk?" value="Book a 30-min discovery call" href="/book-call" />
 
             <div className="rounded-2xl overflow-hidden glass h-56 relative">
@@ -86,7 +86,7 @@ function ContactPage() {
               <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.35), transparent 40%), radial-gradient(circle at 70% 60%, rgba(255,255,255,0.2), transparent 45%)" }} />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="glass rounded-xl px-4 py-2 flex items-center gap-2 text-sm font-semibold">
-                  <MapPin className="h-4 w-4 text-primary" /> Lisbon, PT
+                  <MapPin className="h-4 w-4 text-primary" /> UK, USA & Canada Based
                 </div>
               </div>
             </div>
@@ -123,5 +123,14 @@ function ContactCard({ icon: Icon, title, value, href }: { icon: typeof Mail; ti
       </div>
     </div>
   );
-  return href ? <a href={href} className="block">{inner}</a> : inner;
+  return href ? (
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      className="block"
+    >
+      {inner}
+    </a>
+  ) : inner;
 }
