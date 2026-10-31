@@ -228,4 +228,4 @@
 @utility animate-float { animation: float 6s ease-in-out infinite; }
 @utility animate-blob { animation: blob 14s ease-in-out infinite; }
 @utility animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
-@utility animate-border-spin { animation: border-spin 3.5s linear infinite; }
+@utility animate-border-spin { animation: border-spin 3s linear infinite; }
