@@ -81,12 +81,18 @@ function ContactPage() {
             <ContactCard icon={MapPin} title="Location" value="Remote · UK, USA & Canada Based" />
             <ContactCard icon={Calendar} title="Prefer to talk?" value="Book a 30-min discovery call" href="/book-call" />
 
-            <div className="rounded-2xl overflow-hidden glass h-56 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30" />
-              <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.35), transparent 40%), radial-gradient(circle at 70% 60%, rgba(255,255,255,0.2), transparent 45%)" }} />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="glass rounded-xl px-4 py-2 flex items-center gap-2 text-sm font-semibold">
-                  <MapPin className="h-4 w-4 text-primary" /> UK, USA & Canada Based
+            <div className="rounded-2xl overflow-hidden glass h-60 relative border border-border/60 shadow-sm">
+              <iframe
+                title="Google Map Location"
+                src="https://maps.google.com/maps?q=United%20Kingdom&t=&z=4&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="absolute bottom-3 left-3 pointer-events-none">
+                <div className="glass rounded-xl px-3.5 py-1.5 flex items-center gap-2 text-xs font-semibold shadow-md bg-background/85 backdrop-blur-md border border-border/50">
+                  <MapPin className="h-3.5 w-3.5 text-primary" /> UK, USA & Canada Based
                 </div>
               </div>
             </div>
