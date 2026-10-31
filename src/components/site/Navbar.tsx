@@ -122,10 +122,16 @@ export function Navbar() {
               href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-shadow"
+              className="group relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] shadow-elegant hover:shadow-glow focus:outline-none"
             >
-              Hire on Upwork
-              <ExternalLink className="h-3.5 w-3.5" />
+              {/* Animated rotating gradient border beam */}
+              <span className="absolute inset-[-1000%] animate-border-spin bg-[conic-gradient(from_90deg_at_50%_50%,#2563EB_0%,#7C3AED_33%,#06B6D4_66%,#2563EB_100%)]" />
+
+              {/* Inner button surface */}
+              <span className="relative inline-flex items-center gap-2 rounded-[10.5px] bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-xl transition-colors group-hover:bg-slate-900">
+                <span>Hire on Upwork</span>
+                <ExternalLink className="h-3.5 w-3.5 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </span>
             </a>
           </div>
 
@@ -171,10 +177,13 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="mt-2 text-center rounded-xl bg-gradient-brand px-5 py-3 text-sm font-semibold text-white inline-flex items-center justify-center gap-2"
+                className="group relative mt-2 inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden transition-all duration-300 shadow-elegant focus:outline-none"
               >
-                Hire on Upwork
-                <ExternalLink className="h-3.5 w-3.5" />
+                <span className="absolute inset-[-1000%] animate-border-spin bg-[conic-gradient(from_90deg_at_50%_50%,#2563EB_0%,#7C3AED_33%,#06B6D4_66%,#2563EB_100%)]" />
+                <span className="relative inline-flex w-full items-center justify-center gap-2 rounded-[10.5px] bg-slate-950 px-5 py-3 text-sm font-semibold text-white backdrop-blur-xl transition-colors group-hover:bg-slate-900">
+                  <span>Hire on Upwork</span>
+                  <ExternalLink className="h-3.5 w-3.5 text-cyan-400" />
+                </span>
               </a>
             </div>
           </div>
