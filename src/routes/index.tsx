@@ -591,19 +591,30 @@ function AutomationShowcase() {
         </Reveal>
 
         <Reveal>
-          <div className="rounded-3xl card-glass p-6 lg:p-10 shadow-soft">
-            <div className="flex flex-wrap items-center justify-center gap-3 lg:gap-4">
-              {flow.map((f, i) => (
-                <div key={f.label} className="flex items-center gap-3 lg:gap-4">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="h-14 w-14 rounded-2xl bg-gradient-brand text-white flex items-center justify-center shadow-elegant">
-                      <f.icon className="h-5 w-5" />
+          <div className="rounded-3xl card-glass p-6 sm:p-8 lg:p-10 shadow-soft overflow-hidden">
+            <div className="overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
+              <div className="flex items-center justify-between min-w-[680px] lg:min-w-full w-full">
+                {flow.map((f, i) => (
+                  <div key={f.label} className="flex-1 flex items-center last:flex-none">
+                    {/* Step Node */}
+                    <div className="flex flex-col items-center gap-2 shrink-0 group">
+                      <div className="h-14 w-14 rounded-2xl bg-gradient-brand text-white flex items-center justify-center shadow-elegant transition-transform duration-300 group-hover:scale-105">
+                        <f.icon className="h-5 w-5" />
+                      </div>
+                      <span className="text-xs font-semibold text-muted-foreground group-hover:text-foreground transition-colors">
+                        {f.label}
+                      </span>
                     </div>
-                    <span className="text-xs font-semibold text-muted-foreground">{f.label}</span>
+
+                    {/* Centered Arrow with Balanced Space Between */}
+                    {i < flow.length - 1 && (
+                      <div className="flex-1 flex items-center justify-center px-2">
+                        <ArrowRight className="h-4 w-4 text-muted-foreground/70 shrink-0" />
+                      </div>
+                    )}
                   </div>
-                  {i < flow.length - 1 && <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
