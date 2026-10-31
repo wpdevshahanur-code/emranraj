@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
-import { Mail, MessageCircle, MapPin, Send, Calendar, CheckCircle2 } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Send, Calendar, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { submitContact, type ContactFormData } from "@/lib/fluent-form";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,7 +20,48 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: "",
+    email: "",
+    company: "",
+    budget: "",
+    service: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMessage(null);
+
+    const res = await submitContact(formData);
+    setLoading(false);
+
+    if (res.success) {
+      setSent(true);
+      setSuccessMessage(res.message);
+    } else {
+      setErrorMessage(res.message || "Failed to submit. Please try again or reach out directly.");
+    }
+  };
+
+  const handleReset = () => {
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      budget: "",
+      service: "",
+      message: "",
+    });
+    setSent(false);
+    setErrorMessage(null);
+  };
+
   return (
     <SiteLayout>
       <PageHeader
@@ -32,43 +74,128 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
             <form
-              onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+              onSubmit={handleSubmit}
               className="rounded-3xl glass p-8 lg:p-10 space-y-5"
             >
               {sent ? (
-                <div className="text-center py-16">
-                  <CheckCircle2 className="h-14 w-14 text-primary mx-auto mb-4" />
-                  <h3 className="font-display text-2xl font-bold">Message received</h3>
-                  <p className="mt-2 text-muted-foreground">I'll be back in touch within 24 hours.</p>
+                <div className="text-center py-16 space-y-4">
+                  <CheckCircle2 className="h-16 w-16 text-emerald-400 mx-auto" />
+                  <h3 className="font-display text-2xl font-bold">Message received!</h3>
+                  <p className="text-muted-foreground max-w-md mx-auto text-sm">
+                    {successMessage || "Thank you for getting in touch. I'll review your project details and get back to you within 24 hours."}
+                  </p>
+                  <div className="pt-4">
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      className="inline-flex items-center gap-2 rounded-xl border border-border glass px-5 py-2.5 text-xs font-semibold hover:text-primary transition-colors cursor-pointer"
+                    >
+                      Send another message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <>
+                  {errorMessage && (
+                    <div className="rounded-2xl border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive flex items-start gap-3">
+                      <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <div className="font-semibold">Unable to submit message</div>
+                        <div className="text-xs opacity-90">{errorMessage}</div>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Name"><input required className="input" placeholder="Your full name" /></Field>
-                    <Field label="Email"><input required type="email" className="input" placeholder="you@company.com" /></Field>
+                    <Field label="Name">
+                      <input
+                        required
+                        disabled={loading}
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="input"
+                        placeholder="Your full name"
+                      />
+                    </Field>
+                    <Field label="Email">
+                      <input
+                        required
+                        type="email"
+                        disabled={loading}
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="input"
+                        placeholder="you@company.com"
+                      />
+                    </Field>
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Company"><input className="input" placeholder="Company name" /></Field>
+                    <Field label="Company">
+                      <input
+                        disabled={loading}
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="input"
+                        placeholder="Company name"
+                      />
+                    </Field>
                     <Field label="Budget">
-                      <select className="input" defaultValue="">
+                      <select
+                        disabled={loading}
+                        value={formData.budget}
+                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                        className="input"
+                      >
                         <option value="" disabled>Select a range</option>
-                        <option>Under $2k</option><option>$2k – $5k</option><option>$5k – $15k</option><option>$15k+</option>
+                        <option value="Under $2k">Under $2k</option>
+                        <option value="$2k – $5k">$2k – $5k</option>
+                        <option value="$5k – $15k">$5k – $15k</option>
+                        <option value="$15k+">$15k+</option>
                       </select>
                     </Field>
                   </div>
                   <Field label="Service">
-                    <select className="input" defaultValue="">
+                    <select
+                      disabled={loading}
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="input"
+                    >
                       <option value="" disabled>What do you need?</option>
-                      <option>WordPress website</option><option>WooCommerce store</option>
-                      <option>JetEngine / Crocoblock build</option><option>n8n automation</option>
-                      <option>AI workflow</option><option>Something else</option>
+                      <option value="WordPress website">WordPress website</option>
+                      <option value="WooCommerce store">WooCommerce store</option>
+                      <option value="JetEngine / Crocoblock build">JetEngine / Crocoblock build</option>
+                      <option value="n8n automation">n8n automation</option>
+                      <option value="AI workflow">AI workflow</option>
+                      <option value="Something else">Something else</option>
                     </select>
                   </Field>
                   <Field label="Project details">
-                    <textarea rows={5} className="input resize-none" placeholder="Tell me about your project, timelines and any references…" />
+                    <textarea
+                      required
+                      disabled={loading}
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="input resize-none"
+                      placeholder="Tell me about your project, timelines and any references…"
+                    />
                   </Field>
-                  <button type="submit" className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow">
-                    Send message <Send className="h-4 w-4" />
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow disabled:opacity-70 transition-all cursor-pointer"
+                  >
+                    {loading ? (
+                      <>
+                        Sending message...
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send message <Send className="h-4 w-4" />
+                      </>
+                    )}
                   </button>
                 </>
               )}
