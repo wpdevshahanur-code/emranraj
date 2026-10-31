@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Facebook, Linkedin, Mail } from "lucide-react";
 import { Logo } from "@/components/site/Logo";
 
 export function Footer() {
@@ -61,14 +61,14 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-3">
             {[
-              { Icon: Twitter, href: "#" },
-              { Icon: Linkedin, href: "#" },
-              { Icon: Github, href: "#" },
-              { Icon: Mail, href: "mailto:hello@novastack.dev" },
-            ].map(({ Icon, href }, i) => (
+              { Icon: Linkedin, href: "#", label: "LinkedIn" },
+              { Icon: Facebook, href: "#", label: "Facebook" },
+              { Icon: Mail, href: "mailto:hello@novastack.dev", label: "Gmail" },
+            ].map(({ Icon, href, label }, i) => (
               <a
                 key={i}
                 href={href}
+                aria-label={label}
                 className="h-9 w-9 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Icon className="h-4 w-4" />
