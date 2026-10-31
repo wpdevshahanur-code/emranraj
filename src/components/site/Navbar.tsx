@@ -122,10 +122,21 @@ export function Navbar() {
               href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
               target="_blank"
               rel="noopener noreferrer"
-              className="animated-border-btn inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white focus:outline-none group"
+              className="group relative inline-flex items-center gap-2 rounded-xl bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-[1.02] focus:outline-none"
             >
-              <span>Hire on Upwork</span>
-              <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {/* Outer soft ambient glow */}
+              <span className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-brand opacity-35 blur-md transition-opacity duration-300 group-hover:opacity-75" />
+
+              {/* Exact-fit masked rotating gradient border */}
+              <span className="border-mask-track">
+                <span className="absolute inset-[-250%] animate-border-spin bg-[conic-gradient(from_0deg_at_50%_50%,#38bdf8_0%,#ffffff_25%,#c084fc_50%,#38bdf8_75%,#ffffff_100%)]" />
+              </span>
+
+              {/* Button content */}
+              <span className="relative z-10 flex items-center gap-2">
+                <span>Hire on Upwork</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
             </a>
           </div>
 
@@ -171,10 +182,15 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="animated-border-btn mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white focus:outline-none"
+                className="group relative mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-brand px-5 py-3 text-sm font-semibold text-white shadow-elegant focus:outline-none"
               >
-                <span>Hire on Upwork</span>
-                <ExternalLink className="h-3.5 w-3.5" />
+                <span className="border-mask-track">
+                  <span className="absolute inset-[-250%] animate-border-spin bg-[conic-gradient(from_0deg_at_50%_50%,#38bdf8_0%,#ffffff_25%,#c084fc_50%,#38bdf8_75%,#ffffff_100%)]" />
+                </span>
+                <span className="relative z-10 flex items-center gap-2">
+                  <span>Hire on Upwork</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </span>
               </a>
             </div>
           </div>
