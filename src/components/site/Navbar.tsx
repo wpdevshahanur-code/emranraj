@@ -122,19 +122,10 @@ export function Navbar() {
               href="https://www.upwork.com/freelancers/~015c9f89118b7be509"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center p-[2.5px] rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] shadow-elegant hover:shadow-glow focus:outline-none"
+              className="animated-border-btn inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white focus:outline-none group"
             >
-              {/* Outer ambient blur glow */}
-              <span className="absolute -inset-1 rounded-xl bg-gradient-brand opacity-50 blur-sm group-hover:opacity-90 transition-opacity" />
-
-              {/* Animated rotating high-contrast gradient border */}
-              <span className="absolute inset-[-1000%] animate-border-spin bg-[conic-gradient(from_0deg_at_50%_50%,#38bdf8_0%,#ffffff_25%,#c084fc_50%,#38bdf8_75%,#ffffff_100%)] opacity-95" />
-
-              {/* Original Brand Gradient Button Surface */}
-              <span className="relative inline-flex items-center gap-2 rounded-[9.5px] bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-white/20 transition-all duration-200 group-hover:brightness-110">
-                <span>Hire on Upwork</span>
-                <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
+              <span>Hire on Upwork</span>
+              <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
 
@@ -180,14 +171,10 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="group relative mt-2 inline-flex items-center justify-center p-[2.5px] rounded-xl overflow-hidden transition-all duration-300 shadow-elegant focus:outline-none"
+                className="animated-border-btn mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white focus:outline-none"
               >
-                <span className="absolute -inset-1 rounded-xl bg-gradient-brand opacity-50 blur-sm" />
-                <span className="absolute inset-[-1000%] animate-border-spin bg-[conic-gradient(from_0deg_at_50%_50%,#38bdf8_0%,#ffffff_25%,#c084fc_50%,#38bdf8_75%,#ffffff_100%)] opacity-95" />
-                <span className="relative inline-flex w-full items-center justify-center gap-2 rounded-[9.5px] bg-gradient-brand px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-white/20 transition-all group-hover:brightness-110">
-                  <span>Hire on Upwork</span>
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </span>
+                <span>Hire on Upwork</span>
+                <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
