@@ -91,8 +91,8 @@ function BookCallPage() {
             <div className="rounded-2xl bg-gradient-brand text-white p-6 shadow-elegant">
               <div className="font-display text-lg font-bold">Prefer async?</div>
               <p className="mt-1 text-sm text-white/85">Send the brief by email and I'll reply within 24 hours.</p>
-              <a href="mailto:hello@novastack.dev" className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white text-primary px-4 py-2 text-sm font-semibold">
-                hello@novastack.dev
+              <a href="mailto:itsemranraj@gmail.com" className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white text-primary px-4 py-2 text-sm font-semibold">
+                itsemranraj@gmail.com
               </a>
             </div>
           </Reveal>

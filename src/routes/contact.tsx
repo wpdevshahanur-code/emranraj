@@ -76,7 +76,7 @@ function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-2 space-y-5">
-            <ContactCard icon={Mail} title="Business email" value="hello@novastack.dev" href="mailto:hello@novastack.dev" />
+            <ContactCard icon={Mail} title="Business email" value="itsemranraj@gmail.com" href="mailto:itsemranraj@gmail.com" />
             <ContactCard icon={MessageCircle} title="WhatsApp" value="+1 (555) 019-4231" href="https://wa.me/15550194231" />
             <ContactCard icon={MapPin} title="Location" value="Remote · Lisbon, Portugal" />
             <ContactCard icon={Calendar} title="Prefer to talk?" value="Book a 30-min discovery call" href="/book-call" />

@@ -61,14 +61,16 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-3">
             {[
-              { Icon: Linkedin, href: "#", label: "LinkedIn" },
-              { Icon: Facebook, href: "#", label: "Facebook" },
-              { Icon: Mail, href: "mailto:hello@novastack.dev", label: "Gmail" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/wpdevemran/", label: "LinkedIn" },
+              { Icon: Facebook, href: "https://www.facebook.com/Devemran321/", label: "Facebook" },
+              { Icon: Mail, href: "mailto:itsemranraj@gmail.com", label: "Gmail" },
             ].map(({ Icon, href, label }, i) => (
               <a
                 key={i}
                 href={href}
                 aria-label={label}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="h-9 w-9 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Icon className="h-4 w-4" />
